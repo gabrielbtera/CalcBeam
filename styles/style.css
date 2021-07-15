@@ -88,7 +88,8 @@ p {
 .btnsalinhamentoCalculos {
     
     display: flex;
-    margin-top: 25px;
+    margin-top: 20px;
+    
     
 }
 
@@ -192,10 +193,20 @@ p {
         
         
     }.divsCalculos {
-        margin: 20px;
+        margin: 15px;
         margin-top: 50px;
         
         
+        
+    }.entradas{
+        height: 40px;
+    }.divInputsCalc {
+        margin: 3px;
+    }.btnsalinhamentoCalculos {
+    
+        display: flex;
+        margin-top: 20px;
+        margin-bottom: 5px;
         
     }
 }
