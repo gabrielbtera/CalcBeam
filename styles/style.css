@@ -208,5 +208,10 @@ p {
         margin-top: 20px;
         margin-bottom: 5px;
         
+    }.entradas {
+        text-align: center;
+        color: #004ea7;
+        font-weight: bold;
+        font-size: 20px;
     }
 }
