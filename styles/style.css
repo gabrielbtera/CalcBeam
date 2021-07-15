@@ -1,0 +1,189 @@
+body {
+    background-color: #B7D8FF;;
+    margin: 0;
+    padding: 0;
+
+}
+#container {
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #B7D8FF;
+    margin-top: 50px;
+}
+p,
+label {
+    font: 0.9rem 'Fira Sans', sans-serif;
+}
+p {
+    text-align: center;
+}
+.labelMenu {
+    color: #ecf5ff;
+}
+
+.Dimensionamento {
+    display: flex;
+    flex-direction :row;
+    
+    
+}
+.alinamentoInputs, .alinamentoInputsContas{
+    
+    display: flex;
+    flex-direction :row;
+    
+    align-items: center;
+    
+
+}.Inputscondicional{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+
+
+.alinamentoInputs {
+    text-align: center;
+    padding: 1.5rem;
+}
+.alinamentoInputs:hover {
+    background-color: #004ea7;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+.buttonResolveConta {
+    color: #fff;
+    background-color: #0055B8;
+    width: 100%;
+    height: 35px;
+    font-size: 15px;
+    border: none;
+    
+    box-shadow: rgb(138, 138, 138) 0px 2px 3px;
+    border-radius: 5px;
+
+    
+}.buttonResolveConta:hover {
+    background-color: #005fcc;
+}.buttonResolveConta:active{
+    background-color: #004594;
+}
+
+
+.alinhamentoCalculos{
+    
+    margin: 0.9rem;
+    display: flex;
+    flex-direction :column
+    
+}
+.btnsalinhamentoCalculos {
+    
+    display: flex;
+    margin-top: 25px;
+    
+}
+
+.divsCalculos {
+    margin-top: 50px;
+    
+    display: none;
+    flex-direction: row;
+    background-color: #B7D8FF;
+    box-shadow: 1px 1px 2px;
+    border-radius: 5px;
+    /* justify-content: center;
+    align-items: center; */
+    
+    
+}
+.divInputsCalc {
+    margin: 20px;
+}
+
+.navBar {
+    width: 100%;
+    background-color:#0055B8 ;
+    position: fixed;
+    top: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 50px;
+    box-shadow: 1px 1px 5px;
+
+}
+.legendas {
+    font-size: 0.7rem;
+    color: #003c80;
+}
+.paragCabecalho {
+    color: #003c80;
+    font-weight: bold;
+}
+.divCabecalho {
+    margin-bottom: 35px;
+}
+#momentoDeCalcInput, #momAtuante{
+    display: none;
+}
+.checks {
+   
+    margin-right: 5px;
+    display: none
+}
+.checksCondicional, .checks {
+    min-width: 20px;
+    min-height: 20px;
+    background-color: #ecf5ff;
+    border: none;
+}
+
+
+.entradas {
+    height: 25px;
+    background-color: #ecf5ff;
+    box-shadow: 0 0 0 0;
+    border: 0 none;
+    border-radius: 5px;
+    
+}
+.entradas:focus  {
+    background-color: #FFF;
+    outline: 0;
+
+}
+
+@media screen and (max-width: 520px) {
+    .alinamentoInputs {
+        
+        padding: 2%;
+        
+    }.labelMenu {
+        font-size: 0.7rem;
+    }
+}
+
+@media screen and (max-width: 425px) {
+    .alinamentoInputs {
+        
+        padding: 2%;
+        height: 4rem;
+        
+    }.labelMenu {
+        font-size: 0.7rem;
+    }
+    .Dimensionamento {
+        display: flex;
+        flex-direction :inherit;
+        
+        
+    }
+}

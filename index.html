@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="styles/style.css" rel="stylesheet">
+</head>
+<body>
+    <div class="main">
+        <div class="navBar">
+            <div class='Dimensionamento'>
+                <div class="alinamentoInputs">
+                    <input  type="checkbox" name="ArmLong" id="ArmLong" class="checks">
+                    <label class="labelMenu" for="ArmLong">Armadura Longitudinal</label>
+                </div>  
+                <div class="alinamentoInputs">
+                    <input type="checkbox" id="arrowIme" class="checks">
+                    <label class="labelMenu" for="arrowIme">Flecha Imediata</label>
+                </div>
+                <div class="alinamentoInputs">
+                    <input type="checkbox" id="arrowDif" class="checks">
+                    <label class="labelMenu" for="arrowDif">Flecha Diferida</label>
+                </div>
+                
+                
+                <div class="alinamentoInputs">
+                    <input type="checkbox" id="ArmTrans" class="checks">
+                    <label class="labelMenu" for="ArmTrans">Armadura Transversal</label>
+                </div>
+
+                <div class="alinamentoInputs">
+                    <input type="checkbox" id="denteGerber" class="checks">
+                    <label class="labelMenu"  for="ArmTrans">Dente Gerber</label>
+                </div>
+        
+            </div>
+        </div> 
+    
+    <div id="container" class="container">
+        
+        
+
+        <div class="divsCalculos" id='calculoDaArmlong'>
+            
+            <div class="divInputsCalc">
+                <div class="divCabecalho">
+                    <p class="paragCabecalho">
+                        Armadura Longitudinal
+                    </p>
+                </div>
+                <div class="alinhamentoCalculos">
+                    <label class="legendas">Altura da viga (m)</label>
+                    <input id="alturaViga"class="entradas" type="text" >
+                </div>
+
+                <div class="alinhamentoCalculos">
+                    <label class="legendas">Altura util da viga (m)</label>
+                    <input id="alturaViga"class="entradas" type="text" step="any">
+                </div>
+                <div class="alinhamentoCalculos">
+                    <label class="legendas">Largura da viga (m)</label>
+                    <input class="entradas" type="text">
+                </div>
+                <div class="alinhamentoCalculos">
+                    <label class="legendas"> Resistência característica do concreto (KN/m²)</label>
+                    <input class="entradas" type="text">
+                </div>
+                <div class="alinhamentoCalculos">
+                    <label class="legendas"> Resistência característica do concreto (KN/m²)</label>
+                    <input class="entradas" type="text">
+                </div>
+                <div class="alinhamentoCalculos">
+                    <label  class="legendas">Resistência característica ao escoamento do aço  (25; 40; 50; 60) </label>
+                    <input class="entradas" type="text">
+                </div>
+
+                <div class="alinamentoInputsContas">
+                    <div class="Inputscondicional">
+                        <input type="checkbox" id="condmomentocalc" class="checksCondicional">
+                        <label for="condmomentocalc" class="legendas">Momento de calculo</label>
+                    </div>
+        
+                    <div class="Inputscondicional">
+                        <input type="checkbox" id="condmomentoatuan" class="checksCondicional">
+                        <label for="condmomentocalc" class="legendas">Momento Atuante</label>
+                    </div>
+                </div>
+                <div class="alinhamentoCalculos" id="momentoDeCalcInput">
+                    <label class="legendas"> Momento de calculo</label>
+                    <input class="entradas" type="text">
+                </div>
+
+                <div class="alinhamentoCalculos" id="momAtuante">
+                    <label class="legendas"> Momento Atuante</label>
+                    <input class="entradas" type="text">
+                </div>
+                <div class="btnsalinhamentoCalculos" >
+                    <button class="buttonResolveConta" id="btnArmLong">
+                        Calcular
+                    </button> 
+                </div>
+                    
+            </div>
+            
+
+           
+        </div>
+        
+
+    </div>
+    </div>
+  
+</body>
+    <script src="js/interacoes.js"></script>
+</html>
+</html>
