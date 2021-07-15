@@ -161,6 +161,12 @@ p {
 
 }
 
+
+
+
+
+
+
 @media screen and (max-width: 520px) {
     .alinamentoInputs {
         
@@ -183,6 +189,12 @@ p {
     .Dimensionamento {
         display: flex;
         flex-direction :inherit;
+        
+        
+    }.divsCalculos {
+        margin: 20px;
+        margin-top: 50px;
+        
         
         
     }
