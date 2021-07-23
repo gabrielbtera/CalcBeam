@@ -168,7 +168,7 @@ p {
 
 
 
-@media screen and (max-width: 520px) {
+@media screen and (max-width: 595px) {
     .alinamentoInputs {
         
         padding: 2%;
@@ -182,7 +182,7 @@ p {
     .alinamentoInputs {
         
         padding: 2%;
-        height: 4rem;
+        height: 3rem;
         
     }.labelMenu {
         font-size: 0.7rem;
@@ -213,5 +213,6 @@ p {
         color: #004ea7;
         font-weight: bold;
         font-size: 20px;
+        
     }
 }
