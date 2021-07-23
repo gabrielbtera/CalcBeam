@@ -5,7 +5,7 @@ body {
     font-family: sans-serif;
 
 }
-#container {
+.container {
     width: 100vw;
     display: flex;
     flex-direction: column;
@@ -14,6 +14,7 @@ body {
     background-color: #B7D8FF;
     margin-top: 50px;
 }
+
 p,
 label {
     font: 0.9rem 'Fira Sans', sans-serif;
@@ -27,19 +28,16 @@ p {
 
 .Dimensionamento {
     display: flex;
-    flex-direction :row;
-    
-    
+    flex-direction :row; 
 }
+
 .alinamentoInputs, .alinamentoInputsContas{
-    
     display: flex;
     flex-direction :row;
-    
     align-items: center;
-    
+}
 
-}.Inputscondicional{
+.Inputscondicional{
     display: flex;
     align-items: center;
     justify-content: center;
@@ -66,45 +64,43 @@ p {
     height: 35px;
     font-size: 15px;
     border: none;
-    
     box-shadow: rgb(138, 138, 138) 0px 2px 3px;
-    border-radius: 5px;
+    border-radius: 5px;  
+}
 
-    
-}.buttonResolveConta:hover {
+.buttonResolveConta:hover {
     background-color: #005fcc;
 }.buttonResolveConta:active{
     background-color: #004594;
 }
 
 
-.alinhamentoCalculos{
-    
+.alinhamentoCalculos, .seletorGeral{
     margin: 0.9rem;
     display: flex;
     flex-direction :column
     
 }
+
+.seletorGeral {
+    width: 50%;
+}
+
 .btnsalinhamentoCalculos {
-    
+    width: 100%;
     display: flex;
     margin-top: 20px;
-    
-    
 }
 
 .divsCalculos {
     margin-top: 50px;
-    
     display: none;
     flex-direction: row;
     background-color: #B7D8FF;
     box-shadow: 1px 1px 2px;
     border-radius: 5px;
-    
-    
-    
 }
+
 .divInputsCalc {
     margin: 20px;
 }
@@ -136,10 +132,10 @@ p {
     display: none;
 }
 .checks {
-   
     margin-right: 5px;
     display: none
 }
+
 .checksCondicional, .checks {
     min-width: 20px;
     min-height: 20px;
@@ -148,12 +144,13 @@ p {
 }
 
 
-.entradas {
+.entradas, .seletorGeralInterno {
     height: 25px;
     background-color: #ecf5ff;
     box-shadow: 0 0 0 0;
     border: 0 none;
     border-radius: 5px;
+    color: #003c80;
     
 }
 .entradas:focus  {
@@ -162,6 +159,13 @@ p {
 
 }
 
+.seletorGeralInterno {
+    font-size: 11px;
+    font-weight: 400;
+    outline: 1;
+    outline-color: #a1c7f5;
+
+}
 
 
 

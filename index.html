@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>calc beam</title>
     <link href="styles/style.css" rel="stylesheet">
 </head>
 <body>
@@ -36,7 +36,7 @@
                 </div>
         
             </div>
-        </div> 
+    </div> 
     
     <div id="container" class="container">
         
@@ -107,12 +107,155 @@
             <div class="resultadoCalculo">
                 
             </div>
-            
-
-           
         </div>
-        
 
+    <div class="divsCalculos" id='calculDaFlechaImediata'>
+            
+        <div class="divInputsCalc">
+            <div class="divCabecalho">
+                <p class="paragCabecalho">
+                    Flecha Imediata
+                </p>
+            </div>
+            <div class="alinhamentoCalculos">
+                <label class="legendas">Altura da viga (cm)</label>
+                <input id="alturaViga"class="entradas" type="text" name="entradasFlechaI" >
+            </div>
+
+            <div class="alinhamentoCalculos">
+                <label class="legendas">Altura util da viga (cm)</label>
+                <input id="alturaUtilViga"class="entradas" type="text" name="entradasFlechaI">
+            </div>
+            <div class="alinhamentoCalculos">
+                <label class="legendas">Distância para armadura dupla (cm)</label>
+                <input class="entradas" type="text" name="entradasFlechaI">
+            </div>
+            <div class="alinhamentoCalculos">
+                <label class="legendas">Largura da viga (cm)</label>
+                <input class="entradas" type="text" name="entradasFlechaI">
+            </div>
+            <div class="alinhamentoCalculos">
+                <label class="legendas"> Resistência característica do concreto (MPa)</label>
+                <input class="entradas" type="text" name="entradasFlechaI">
+            </div>
+            <div class="alinhamentoCalculos">
+                <label class="legendas"> Módulo de deformação longitudinal do aço (MPa)</label>
+                <input class="entradas" type="text" name="entradasArmLong">
+            </div>
+            <div class="alinhamentoCalculos">
+                <label class="legendas"> Armadura de tração (cm²)</label>
+                <input class="entradas" type="text" name="entradasArmLong">
+            </div>
+            <div class="alinhamentoCalculos">
+                <label class="legendas">Carga que inside sobre a viga (KN/m)</label>
+                <input class="entradas" type="text" name="entradasArmLong">
+            </div>
+            
+            <div class="alinhamentoCalculos">
+                <label class="legendas"> Comprimento da viga (m)</label>
+                <input class="entradas" type="text" name="entradasArmLong">
+            </div>
+
+            <div class="seletorGeral" id = 'SeletorFlechaImediata' >
+                <select class= "seletorGeralInterno" name="select">
+                    <option value="semAgregado" selected>Sem agregado</option>
+                    <option value="basaltoeD" >Basalto e Diabásio = 1,2</option>
+                    <option value="granitoGnaisse">Granito e Gnaisse = 1,0</option>
+                    <option value="calcario">Calcário = 0,9</option>
+                    <option value="arenito">Arenito = 0,8</option>
+                </select>
+            </div>
+            
+            <div class="btnsalinhamentoCalculos" >
+                <button class="buttonResolveConta" id="btnFlechaI">
+                    Calcular
+                </button> 
+            </div>
+                
+        </div>
+    
+
+   
+    </div>
+
+    <div class="divsCalculos" id='calculoDaFlechaImediata'>
+            
+        <div class="divInputsCalc">
+            <div class="divCabecalho">
+                <p class="paragCabecalho">
+                    Flecha Diferida
+                </p>
+            </div>
+            <div class="alinhamentoCalculos">
+                <label class="legendas">Flecha Imediata (cm)</label>
+                <input id="flechaImediataValor"class="entradas" type="text" name="entradasFlechaD" >
+            </div>
+
+            <div class="seletorGeral" id = 'SeletorFlechaDiferida' >
+                <select class= "seletorGeralInterno" name="select">
+                    <option  id="vazioDiferida" value="semAgregado" selected>Insira o tempo em mês</option>
+                    <option value="nehumMesDiferida" >Nenhum mês</option>
+                    <option value="metadeMesDiferida" >Metade de um mês</option>
+                    <option value="umMEs">1 mês</option>
+                    <option value="calcario">2 meses</option>
+                    <option value="arenito">3 meses</option>
+                    <option value="arenito">4 meses</option>
+                    <option value="arenito">5 meses</option>
+                    <option value="arenito">10 meses</option>
+                    <option value="arenito">20 meses</option>
+                    <option value="arenito">40 meses</option>
+                    <option value="arenito">70 meses ou mais</option>
+                </select>
+            </div>
+
+            <div class="alinamentoInputsContas">
+                <div class="Inputscondicional">
+                    <input type="checkbox" id="armSimples" class="checksCondicional">
+                    <label for="condmomentocalc" class="legendas">Armadura Simples</label>
+                </div>
+    
+                <div class="Inputscondicional">
+                    <input type="checkbox" id="armDupla" class="checksCondicional">
+                    <label for="condmomentocalc" class="legendas">Armadura Dupla</label>
+                </div>
+            </div>
+            
+            <div class="tresInputs" id="tresInputs">
+                <div class="alinhamentoCalculos">
+                    <label class="legendas">Altura util da viga (m)</label>
+                    <input id="alturaUtilViga"class="entradas" type="text" name="entradasFlechaD">
+                </div>
+                <div class="alinhamentoCalculos">
+                    <label class="legendas">Largura da viga (m)</label>
+                    <input class="entradas" type="text" name="entradasFlechaD">
+                </div>
+                <div class="alinhamentoCalculos">
+                    <label class="legendas">Armadura de compressão (cm²)</label>
+                    <input class="entradas" type="text" name="entradasFlechaD">
+                </div>
+                
+            </div>
+
+            <div class="alinhamentoCalculos">
+                <label class="legendas"> Valor da parcela de carga (KN). (opcional) </label>
+                <input class="entradas" type="text" name="entradasFlechaD">
+            </div>
+
+            
+            
+            <div class="btnsalinhamentoCalculos" >
+                <button class="buttonResolveConta" id="btnFlechaI">
+                    Calcular
+                </button> 
+            </div>
+            
+                
+        </div>
+    
+        <div class="resultadoCalculo">
+                
+        </div>
+   
     </div>
     </div>
   
