@@ -1,11 +1,18 @@
 var teste = document.getElementById('calculoDaArmlong');
 var checar = document.getElementById('ArmLong');
-var v = document.getEle
+// var v = document.getElementById()
 var telaFlechaI = document.getElementById('calculoDaFlechaImediata');
 var checkFlechaI = document.getElementById('arrowIme');
 
 var condicionalMomCalc = document.getElementById('condmomentocalc');
 var divMomCalc = document.getElementById('momentoDeCalcInput');
+
+var telaflechaD = document.getElementById('calculoDaFlechaDiferida')
+var checkFlechaD = document.getElementById("arrowDif")
+
+
+
+
 
 var condicionalMomAtuante = document.getElementById('condmomentoatuan');
 var divMomAtua = document.getElementById('momAtuante');
@@ -13,8 +20,8 @@ var divMomAtua = document.getElementById('momAtuante');
 var divMArcacao = document.getElementsByClassName("alinamentoInputs");
 
 function limparChecksNavBar(indice){
-    const listaTlea = [teste, telaFlechaI];
-    const listaCheck = [checar, checkFlechaI]
+    const listaTlea = [teste, telaFlechaI,telaflechaD ];
+    const listaCheck = [checar, checkFlechaI, checkFlechaD]
 
 
     for(let i =0; i<listaTlea.length; i++){
@@ -83,6 +90,28 @@ function mostrarMomentoAtuante(){
     }
 }
 
+var tresCampos = document.getElementById("tresInputs")
+var armSimples = document.getElementById("armSimples")
+var armDupla = document.getElementById("armDupla")
+
+function armSimplesf(campo, arm1, arm2){
+    if(arm1.checked){
+        campo.style.display = "none"
+        arm2.checked = false
+    }
+}
+
+
+function armDuplaf(campo, arm1, arm2){
+    if(arm1.checked){
+        campo.style.display = "flex"
+        arm2.checked = false
+    }else{
+        campo.style.display = "none"
+    }
+}
+
+
 var btn = document.getElementById('calculaDimen');
 function main(){
     checar.onclick = function (){
@@ -107,8 +136,26 @@ function main(){
     checkFlechaI.onclick = function (){
         mostrarCampo(checkFlechaI, telaFlechaI, 1);
     }
+
+    checkFlechaD.onclick =function(){
+        mostrarCampo(checkFlechaD, telaflechaD, 2)
+    }
+
+
+
+
+
+    armSimples.onclick = function(){
+        armSimplesf(tresCampos, armSimples, armDupla)
+    }
+
+    armDupla.onclick = function(){
+        armDuplaf(tresCampos, armDupla, armSimples)
+    }
 }
 main()
+
+
 
 var botao = document.getElementById("btnArmLong")
 var valor = document.getElementById("alturaViga")
@@ -130,4 +177,3 @@ botao.onclick = function (){
     
 }
 
-var flechaImediataValor = document.getElementById('flechaImediataValor');

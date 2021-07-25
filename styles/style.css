@@ -14,6 +14,10 @@ body {
     background-color: #B7D8FF;
     margin-top: 50px;
 }
+select{
+    overflow-y:auto;
+ }
+ 
 
 p,
 label {
@@ -26,9 +30,59 @@ p {
     color: #ecf5ff;
 }
 
+
 .Dimensionamento {
     display: flex;
     flex-direction :row; 
+}
+
+/* dados da flecha imediata*/
+
+.respdif {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+.repeticao {
+    padding-top: 10px;
+    background-color: #afcef5;
+    border-radius: 14px;
+    padding: 10px;
+    
+
+}#exibeValor {
+    padding-top: 25px;
+    border-radius: 10px;
+    background-color:  #b7d8ff;
+    width: 5rem;
+    max-height: 2rem;
+    margin-right: 10%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+
+}
+.legendasValores {
+    font-size:9px;
+}
+.respText{
+    font-weight: lighter;
+    font-size: 14px;
+    padding-top: 0;
+    
+}.btnInsereDif{
+    background-color: #0055B8;
+    border:none;
+    color: #FFF;
+    box-shadow: rgb(138, 138, 138) 0px 2px 3px;
+    border-radius: 5px;  
+    height: 5rem;
+    
+
+}.btnInsereDif:hover {
+    background-color: #005fcc;
 }
 
 .alinamentoInputs, .alinamentoInputsContas{
@@ -93,7 +147,7 @@ p {
 }
 
 .divsCalculos {
-    margin-top: 50px;
+    margin-top: 40px;
     display: none;
     flex-direction: row;
     background-color: #B7D8FF;
@@ -152,6 +206,8 @@ p {
     border-radius: 5px;
     color: #003c80;
     
+}.seletorGeralInterno {
+    height: 30px;
 }
 .entradas:focus  {
     background-color: #FFF;
@@ -168,7 +224,10 @@ p {
 }
 
 
-
+#tresInputs {
+    display: none;
+    flex-direction: column;
+}
 
 
 
@@ -198,7 +257,8 @@ p {
         
     }.divsCalculos {
         margin: 15px;
-        margin-top: 50px;
+        margin-top: 20px;
+        margin-bottom: 30px;
         
         
         

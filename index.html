@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -109,7 +109,7 @@
             </div>
         </div>
 
-    <div class="divsCalculos" id='calculDaFlechaImediata'>
+    <div class="divsCalculos" id='calculoDaFlechaImediata'>
             
         <div class="divInputsCalc">
             <div class="divCabecalho">
@@ -157,7 +157,7 @@
             </div>
 
             <div class="seletorGeral" id = 'SeletorFlechaImediata' >
-                <select class= "seletorGeralInterno" name="select">
+                <select data-size="2" class= "seletorGeralInterno" name="select">
                     <option value="semAgregado" selected>Sem agregado</option>
                     <option value="basaltoeD" >Basalto e Diabásio = 1,2</option>
                     <option value="granitoGnaisse">Granito e Gnaisse = 1,0</option>
@@ -178,7 +178,7 @@
    
     </div>
 
-    <div class="divsCalculos" id='calculoDaFlechaImediata'>
+    <div class="divsCalculos" id='calculoDaFlechaDiferida'>
             
         <div class="divInputsCalc">
             <div class="divCabecalho">
@@ -192,7 +192,7 @@
             </div>
 
             <div class="seletorGeral" id = 'SeletorFlechaDiferida' >
-                <select class= "seletorGeralInterno" name="select">
+                <select  data-size="4"  class= "seletorGeralInterno" name="select">
                     <option  id="vazioDiferida" value="semAgregado" selected>Insira o tempo em mês</option>
                     <option value="nehumMesDiferida" >Nenhum mês</option>
                     <option value="metadeMesDiferida" >Metade de um mês</option>
@@ -235,11 +235,42 @@
                 </div>
                 
             </div>
-
-            <div class="alinhamentoCalculos">
-                <label class="legendas"> Valor da parcela de carga (KN). (opcional) </label>
-                <input class="entradas" type="text" name="entradasFlechaD">
+            <div class="repeticao">
+                <div class="alinhamentoCalculos">
+                    <label class="legendas"> Valor da parcela de carga (KN). (opcional) </label>
+                    <input class="entradas" type="text" name="entradasFlechaD">
+                </div>
+    
+                <div class="alinhamentoCalculos">
+                    <label class="legendas"> Tempo de aplicação da parcela de carga (dias)</label>
+                    <input class="entradas" type="text" name="entradasFlechaD">
+                </div>
+    
+                <div class="alinhamentoCalculos">
+                    <div class="respdif">
+                        <div id= "exibeValor">
+                            <label class="legendasValores"> Carga x Tempo:</label>
+                            <p class="respText">12345</p>
+                            
+                            
+                        </div>
+                        <div id= "exibeValor">
+                            <label class="legendasValores"> Soma Cargas:</label>
+                            <p class="respText">12345</p>
+                            
+                            
+                        </div>
+                        
+                        
+                        
+                        <button class="btnInsereDif">
+                            Novos Valores
+                        </button>
+                    </div>
+                </div>
             </div>
+
+            
 
             
             
