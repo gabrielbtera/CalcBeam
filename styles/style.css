@@ -3,8 +3,9 @@ body {
     margin: 0;
     padding: 0;
     font-family: sans-serif;
-
+    overflow-x: hidden;
 }
+
 .container {
     width: 100vw;
     display: flex;
@@ -14,10 +15,10 @@ body {
     background-color: #B7D8FF;
     margin-top: 50px;
 }
+
 select{
     overflow-y:auto;
- }
- 
+}
 
 p,
 label {
@@ -26,10 +27,10 @@ label {
 p {
     text-align: center;
 }
+
 .labelMenu {
     color: #ecf5ff;
 }
-
 
 .Dimensionamento {
     display: flex;
@@ -68,8 +69,9 @@ p {
     font-size:9px;
 }
 .respText{
-    font-weight: lighter;
+    font-weight: normal;
     font-size: 14px;
+    word-break: break-word;
     padding-top: 0;
     
 }.btnInsereDif{
@@ -83,7 +85,11 @@ p {
 
 }.btnInsereDif:hover {
     background-color: #005fcc;
+}.btnInsereDif:active{
+    background-color: #004594;
 }
+
+/* ------------------------------------------------------------ */
 
 .alinamentoInputs, .alinamentoInputsContas{
     display: flex;
@@ -135,6 +141,13 @@ p {
     flex-direction :column
     
 }
+.locallimpar{
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    border-top: 50px;
+    
+}
 
 .seletorGeral {
     width: 50%;
@@ -144,6 +157,8 @@ p {
     width: 100%;
     display: flex;
     margin-top: 20px;
+    word-break: break-word;
+    
 }
 
 .divsCalculos {
@@ -153,10 +168,13 @@ p {
     background-color: #B7D8FF;
     box-shadow: 1px 1px 2px;
     border-radius: 5px;
+    margin-bottom: 50px;
+    
 }
 
 .divInputsCalc {
-    margin: 20px;
+    margin: 15px;
+    
 }
 
 .navBar {
@@ -174,6 +192,7 @@ p {
 .legendas {
     font-size: 0.7rem;
     color: #003c80;
+    font-size: 15px;
 }
 .paragCabecalho {
     color: #003c80;
@@ -181,6 +200,8 @@ p {
 }
 .divCabecalho {
     margin-bottom: 35px;
+    display: flex;
+    flex-direction: column;
 }
 #momentoDeCalcInput, #momAtuante{
     display: none;
@@ -199,16 +220,20 @@ p {
 
 
 .entradas, .seletorGeralInterno {
-    height: 25px;
+    height: 35px;
     background-color: #ecf5ff;
     box-shadow: 0 0 0 0;
     border: 0 none;
     border-radius: 5px;
     color: #003c80;
+    font-size: 15px;
+    font-weight: bold;
+    text-align: center;
     
 }.seletorGeralInterno {
     height: 30px;
 }
+
 .entradas:focus  {
     background-color: #FFF;
     outline: 0;
@@ -221,6 +246,8 @@ p {
     outline: 1;
     outline-color: #a1c7f5;
 
+}.semBorda {
+    margin: 2px;
 }
 
 
@@ -229,6 +256,27 @@ p {
     flex-direction: column;
 }
 
+#condicaocalc1 , #condicaocalc2 {
+    display: none;
+}
+.botaoLimpar {
+    
+    width: 100px;
+    height: 25px;
+    font-size: 11px;
+    color: #FFF;
+    background-color: #0055B8;
+    border: none;
+    border-radius: 5px;
+    box-shadow: rgb(138, 138, 138) 0px 2px 3px;
+    justify-self: flex-end;
+
+}.botaoLimpar:hover{
+    background-color: #005fcc;
+
+}.botaoLimpar:active {
+    background-color: #004594;
+}
 
 
 @media screen and (max-width: 595px) {
@@ -247,7 +295,11 @@ p {
         padding: 2%;
         height: 3rem;
         
-    }.labelMenu {
+    }.legendas {
+        font-size: 12px;
+    }
+    
+    .labelMenu {
         font-size: 0.7rem;
     }
     .Dimensionamento {

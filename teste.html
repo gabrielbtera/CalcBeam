@@ -9,20 +9,87 @@
     
     
 </head>
-<body>
-    <div>
+<bod <div class="divsCalculos" id='calculoDaArmTrans'>
+            
+    <div class="divInputsCalc">
+        <div class="divCabecalho">
+            <p class="paragCabecalho">
+                Armadura Transversal
+            </p>
+        </div>
+    
+        <div class="alinhamentoCalculos">
+            <label class="legendas">Altura util da viga (m)</label>
+            <input id="alturaUtilVigaTransversal"class="entradas" type="text" name="entradasArmLong">
+        </div>
+        <div class="alinhamentoCalculos">
+            <label class="legendas">Largura da viga (m)</label>
+            <input class="entradas" type="text" name="entradasArmLong">
+        </div>
+       
         
-        <input id="email" placeholder="Email" type="text">
-        <h1 id="testeh">
-                
-        </h1>
-        <button id="testebtn">
-            enviar
-        </button>
-        <button id="testebtn2">
-            enviar
-        </button>
+        <div class="alinhamentoCalculos">
+            <label class="legendas"> Resistência característica do concreto (KN/m²)</label>
+            <input class="entradas" type="text" name="entradasArmLong">
+        </div>
+        <div class="alinhamentoCalculos">
+            <label  class="legendas">Resistência característica ao escoamento do aço  (25; 40; 50; 60) </label>
+            <input class="entradas" type="text" name="entradasArmLong">
+        </div>
+
+        <div class="alinhamentoCalculos">
+            <label  class="legendas">Força contante de cálculo (KN): </label>
+            <input class="entradas" type="text" name="entradasArmLong">
+        </div>
+        <div class="alinhamentoCalculos">
+            <label  class="legendas">Ângulo de inclinação da armadura transversal (alpha) (45º ou 90º) </label>
+            <input class="entradas" type="text" name="entradasArmLong">
+        </div>
+
+        <div class="alinamentoInputsContas">
+            <div class="Inputscondicional">
+                <input type="checkbox" id="condModeloCalculo1" class="checksCondicional">
+                <label for="condmomentocalc" class="legendas">Modelo de Cáculo 1</label>
+            </div>
+
+            <div class="Inputscondicional">
+                <input type="checkbox" id="condModeloCalculo2" class="checksCondicional">
+                <label for="condmomentocalc" class="legendas">Modelo de Cáculo 2</label>
+            </div>
+        </div>
+        <div class="alinhamentoCalculos" id='condicaocalc1'>
+            <div class="alinhamentoCalculos" >
+                <label class="legendas"> Área de aço da Armadura Transversal(cm²):</label>
+                <input class="entradas"  type="text" name="entradasArmLong">
+            </div>
+
+        </div>
+        <div class="alinhamentoCalculos" id='condicaocalc2'>
+            <div class="alinhamentoCalculos" >
+                <label class="legendas"> Área de aço da Armadura Transversal (cm²):</label>
+                <input class="entradas" id="area" type="text" name="entradasArmLong">
+            </div>
+            <div class="alinhamentoCalculos" >
+                <label class="legendas"> Ângulo para modelo de cáculo 2 (de 30º a 45º)</label>
+                <input class="entradas" type="text" name="entradasArmLong">
+            </div>
+
+        </div>
+       
+
+       
+        <div class="btnsalinhamentoCalculos" >
+            <button class="buttonResolveConta" id="btnArmLong">
+                Calcular
+            </button> 
+        </div>
+            
     </div>
+    
+    <div class="resultadoCalculo">
+        
+    </div>
+</div>
     
 </body>
 <script src="/teste.js"></script>

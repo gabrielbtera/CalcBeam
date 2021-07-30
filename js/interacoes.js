@@ -1,27 +1,49 @@
+
+// var v = document.getElementById()
+
+
+// menu principal abrir/fechar
 var teste = document.getElementById('calculoDaArmlong');
 var checar = document.getElementById('ArmLong');
-// var v = document.getElementById()
+
 var telaFlechaI = document.getElementById('calculoDaFlechaImediata');
 var checkFlechaI = document.getElementById('arrowIme');
 
+
+
+var telaflechaD = document.getElementById('calculoDaFlechaDiferida');
+var checkFlechaD = document.getElementById("arrowDif");
+
+var telaArmTranversal = document.getElementById("calculoDaArmTrans");
+var checkArmTranversal = document.getElementById("ArmTrans");
+
+var telaDenteGerber =  document.getElementById("calculoDenteGerber");
+var checkDenteGerber = document.getElementById("denteGerber")
+
+// Condicionais de check boxes
+
+
+// Armadura longitudinal
 var condicionalMomCalc = document.getElementById('condmomentocalc');
 var divMomCalc = document.getElementById('momentoDeCalcInput');
-
-var telaflechaD = document.getElementById('calculoDaFlechaDiferida')
-var checkFlechaD = document.getElementById("arrowDif")
-
-
-
-
 
 var condicionalMomAtuante = document.getElementById('condmomentoatuan');
 var divMomAtua = document.getElementById('momAtuante');
 
+// Armadura Transversal
+
+var condicaoCalc1 = document.getElementById("condModeloCalculo1");
+var condicaoCalc2 = document.getElementById("condModeloCalculo2");
+
+var divCalculo1 = document.getElementById("condicaocalc1");
+var divCalculo2 = document.getElementById("condicaocalc2");
+
+
 var divMArcacao = document.getElementsByClassName("alinamentoInputs");
 
 function limparChecksNavBar(indice){
-    const listaTlea = [teste, telaFlechaI,telaflechaD ];
-    const listaCheck = [checar, checkFlechaI, checkFlechaD]
+    const listaTlea = [teste, telaFlechaI,telaflechaD, telaArmTranversal, telaDenteGerber ];
+    const listaCheck = [checar, checkFlechaI, checkFlechaD, checkArmTranversal, checkDenteGerber]
 
 
     for(let i =0; i<listaTlea.length; i++){
@@ -36,8 +58,6 @@ function limparChecksNavBar(indice){
 }
 
 function mostrarCampo (check, tela, indice){
-    
-
     if(check.checked){
         limparChecksNavBar(indice)
         tela.style.display = 'flex';
@@ -127,12 +147,15 @@ function main(){
     }
 
     condicionalMomAtuante.onclick = function (){
+        
         mostrarMomentoCalculoeAtuante(
             condicionalMomAtuante,
             divMomAtua, 
             condicionalMomCalc,
             divMomCalc)
     }
+
+
     checkFlechaI.onclick = function (){
         mostrarCampo(checkFlechaI, telaFlechaI, 1);
     }
@@ -142,6 +165,30 @@ function main(){
     }
 
 
+    checkArmTranversal.onclick = function(){
+        mostrarCampo(checkArmTranversal, telaArmTranversal, 3)
+    }
+
+    
+    condicaoCalc1.onclick = function(){
+        mostrarMomentoCalculoeAtuante(
+            condicaoCalc1, 
+            divCalculo1,
+            condicaoCalc2,
+            divCalculo2
+
+        )
+    }
+
+    condicaoCalc2.onclick = function(){
+        mostrarMomentoCalculoeAtuante(
+            condicaoCalc2, 
+            divCalculo2,
+            condicaoCalc1,
+            divCalculo1
+
+        )
+    }
 
 
 
@@ -151,6 +198,12 @@ function main(){
 
     armDupla.onclick = function(){
         armDuplaf(tresCampos, armDupla, armSimples)
+    }
+
+
+    checkDenteGerber.onclick = function(){
+        
+        mostrarCampo(checkDenteGerber, telaDenteGerber, 4)
     }
 }
 main()
@@ -176,4 +229,7 @@ botao.onclick = function (){
     (flaga ? alert("preencha os campos marcado de forma correta") : null)
     
 }
+
+
+
 
