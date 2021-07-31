@@ -55,10 +55,6 @@
                             Armadura Longitudinal
                         </p>
                     </div>
-                    <div class="alinhamentoCalculos">
-                        <label class="legendas">Altura da viga (m)</label>
-                        <input id="alturaVigaLongitudinal"class="entradas" type="text" name="entradasArmLong" >
-                    </div>
 
                     <div class="alinhamentoCalculos">
                         <label class="legendas">Altura util da viga (m)</label>
@@ -87,7 +83,7 @@
             
                         <div class="Inputscondicional">
                             <input type="checkbox" id="condmomentoatuan" class="checksCondicional">
-                            <label for="condmomentocalc" class="legendas">Momento Atuante</label>
+                            <label for="condmomentocalc" class="legendas">Momento Característico</label>
                         </div>
                     </div>
                     <div class="alinhamentoCalculos" id="momentoDeCalcInput">
@@ -96,7 +92,12 @@
                     </div>
 
                     <div class="alinhamentoCalculos" id="momAtuante" >
-                        <label class="legendas"> Momento Atuante</label>
+                        <label class="legendas"> Momento Característico</label>
+                        <input class="entradas" type="text" name="entradasArmLong">
+                    </div>
+
+                    <div class="alinhamentoCalculos" id="dlinha" >
+                        <label class="legendas"> Distância para armadura dupla:</label>
                         <input class="entradas" type="text" name="entradasArmLong">
                     </div>
                     <div class="btnsalinhamentoCalculos" >
@@ -490,6 +491,7 @@
     </div>
   
 </body>
+    <script src='js/longitudinal.js'></script>
     <script src="js/interacoes.js"></script>
 </html>
 </html>

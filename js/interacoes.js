@@ -210,25 +210,25 @@ main()
 
 
 
-var botao = document.getElementById("btnArmLong")
-var valor = document.getElementById("alturaViga")
-var valores = document.getElementsByName("entradasArmLong")
+// var botao = document.getElementById("btnArmLong")
+// var valor = document.getElementById("alturaViga")
+// var valores = document.getElementsByName("entradasArmLong")
 
-botao.onclick = function (){
-    let flaga = false
-    for(let i = 0; i <valores.length ; i++){
+// botao.onclick = function (){
+//     let flaga = false
+//     for(let i = 0; i <valores.length ; i++){
         
-        if(valores[i].value ==="" || isNaN(parseFloat(valores[i].value))){
-            valores[i].style.backgroundColor = "#ffdddd"
-            flaga = true
+//         if(valores[i].value ==="" || isNaN(parseFloat(valores[i].value))){
+//             valores[i].style.backgroundColor = "#ffdddd"
+//             flaga = true
             
-        }else {
-            valores[i].style.backgroundColor = "#ecf5ff"
-        }
-    }
-    (flaga ? alert("preencha os campos marcado de forma correta") : null)
+//         }else {
+//             valores[i].style.backgroundColor = "#ecf5ff"
+//         }
+//     }
+//     (flaga ? alert("preencha os campos marcado de forma correta") : null)
     
-}
+// }
 
 
 
