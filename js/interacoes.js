@@ -38,7 +38,11 @@ var condicaoCalc2 = document.getElementById("condModeloCalculo2");
 var divCalculo1 = document.getElementById("condicaocalc1");
 var divCalculo2 = document.getElementById("condicaocalc2");
 
-
+// Flecha imediata condicoes
+var armDuplaImediataCheck = document.getElementById('armDuplaImediata')
+var campoArmDuplaImediataCheck = document.getElementById('compresao')
+var armSimplesImediataCheck = document.getElementById('armSimplesImediata')
+// 
 var divMArcacao = document.getElementsByClassName("alinamentoInputs");
 
 function limparChecksNavBar(indice){
@@ -204,6 +208,21 @@ function main(){
     checkDenteGerber.onclick = function(){
         
         mostrarCampo(checkDenteGerber, telaDenteGerber, 4)
+    }
+
+    armDuplaImediataCheck.onclick = function (){
+        if (armDuplaImediataCheck.checked){
+            campoArmDuplaImediataCheck.style.display = 'flex'
+            armSimplesImediataCheck.checked = false
+        }else{
+            campoArmDuplaImediataCheck.style.display = 'none'
+        }
+    }
+    armSimplesImediataCheck.onclick = function(){
+        if (armSimplesImediataCheck.checked){
+            armDuplaImediataCheck.checked = false
+            campoArmDuplaImediataCheck.style.display = 'none'
+        }
     }
 }
 main()

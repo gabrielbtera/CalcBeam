@@ -203,7 +203,7 @@ p {
     display: flex;
     flex-direction: column;
 }
-#momentoDeCalcInput, #momAtuante{
+#momentoDeCalcInput, #momAtuante, #dlinha{
     display: none;
 }
 .checks {
@@ -278,8 +278,11 @@ p {
     background-color: #004594;
 }
 
+.Aviso{
+    color: #ff0000;
+}
 
-#dlinha{
+#compresao{
     display: none;
 }
 

@@ -87,18 +87,19 @@
                         </div>
                     </div>
                     <div class="alinhamentoCalculos" id="momentoDeCalcInput">
-                        <label class="legendas"> Momento de calculo</label>
+                        <label class="legendas"> Momento de calculo (kN.m):</label>
                         <input class="entradas" type="text" name="entradasArmLong">
                     </div>
 
                     <div class="alinhamentoCalculos" id="momAtuante" >
-                        <label class="legendas"> Momento Característico</label>
+                        <label class="legendas"> Momento Característico (kN.m):</label>
                         <input class="entradas" type="text" name="entradasArmLong">
                     </div>
 
                     <div class="alinhamentoCalculos" id="dlinha" >
-                        <label class="legendas"> Distância para armadura dupla:</label>
-                        <input class="entradas" type="text" name="entradasArmLong">
+                        <p class="Aviso">Você precisa digitar no campo abaixo:</p>
+                        <label class="legendas">Distância para armadura dupla (d') (m) :</label>
+                        <input class="entradas"  type="text" name="entradasArmLong">
                     </div>
                     <div class="btnsalinhamentoCalculos" >
                         <button class="buttonResolveConta" id="btnArmLong">
@@ -109,7 +110,8 @@
                 </div>
             </div>
             
-            <div class="resultadoCalculo">
+            <div class="resultadoCalculoLong">
+
                 
             </div>
         </div>
@@ -167,13 +169,31 @@
                 </div>
 
                 <div class="seletorGeral" id = 'SeletorFlechaImediata' >
-                    <select data-size="2" class= "seletorGeralInterno" name="select">
+                    <select data-size="2" id='seletorGeralInterno' class= "seletorGeralInterno" name="select">
                         <option value="semAgregado" selected>Sem agregado</option>
-                        <option value="basaltoeD" >Basalto e Diabásio = 1,2</option>
-                        <option value="granitoGnaisse">Granito e Gnaisse = 1,0</option>
-                        <option value="calcario">Calcário = 0,9</option>
-                        <option value="arenito">Arenito = 0,8</option>
+                        <option value="1.2" >Basalto e Diabásio = 1,2</option>
+                        <option value="1.0">Granito e Gnaisse = 1,0</option>
+                        <option value="0.9">Calcário = 0,9</option>
+                        <option value="0.8">Arenito = 0,8</option>
                     </select>
+                </div>
+
+                <div class="alinamentoInputsContas">
+                    <div class="Inputscondicional">
+                        <input type="checkbox" id="armSimplesImediata" class="checksCondicional">
+                        <label for="condmomentocalc" class="legendas">Armadura Simples</label>
+                    </div>
+        
+                    <div class="Inputscondicional">
+                        <input type="checkbox" id="armDuplaImediata" class="checksCondicional">
+                        <label for="condmomentocalc" class="legendas">Armadura Dupla</label>
+                    </div>
+                </div>
+                <div id="compresao" class="alinhamentoCalculos">
+                    <div class="alinhamentoCalculos">
+                        <label class="legendas">Armadura de compressão (cm²)</label>
+                        <input class="entradas" type="text" name="entradasFlechaD">
+                    </div>
                 </div>
                 
                 <div class="btnsalinhamentoCalculos" >
@@ -343,7 +363,7 @@
                 </div>
 
                 <div class="alinhamentoCalculos">
-                    <label  class="legendas">Força contante de cálculo (KN): </label>
+                    <label  class="legendas">Força constante de cálculo (KN): </label>
                     <input class="entradas" type="text" name="entradasArmLong">
                 </div>
                 <div class="alinhamentoCalculos">
@@ -410,7 +430,7 @@
             
                 <div class="alinhamentoCalculos">
                     <label class="legendas">Altura util da viga (m)</label>
-                    <input id="alturaUtilVigaTransversal"class="entradas" type="text" name="entradasArmLong">
+                    <input class="entradas" type="text" name="entradasArmLong">
                 </div>
 
                 <div class="alinhamentoCalculos">
@@ -491,6 +511,7 @@
     </div>
   
 </body>
+    <script src='js/flechaImediata.js'></script>
     <script src='js/longitudinal.js'></script>
     <script src="js/interacoes.js"></script>
 </html>

@@ -7,11 +7,13 @@ let condicionalMomCaracteristico =  document.getElementById('condmomentoatuan')
 let areaDeAcoPost = 0 
 let areaTotal = 0
 
+let casasLong = 2
+
 function calculoDaArmlongitudinal(
     alturaUtilDaviga,  larguraDaViga, 
     resistenciaConcreto, resistenciaAco, 
-    momentoCalculo, momentoCaracteristico, dlinha){
-    
+    momentoCalculo, momentoCaracteristico,divDlinha, 
+    dlinha, aviso){
    
     if(condicionalMomCaracteristico.checked){
         md = momentoCaracteristico * 1.4
@@ -35,15 +37,27 @@ function calculoDaArmlongitudinal(
 
     if(mdLimite >= md){
         areaDeAcoPost = md/((alturaUtilDaviga - 0.4 * x1) * fyd)
-        return [areaDeAcoPost.toFixed(3)]
+        
+        return [areaDeAcoPost.toFixed(casasLong)]
 
     }if(mdLimite < md){
-        dlinha.style.display = 'flex'
-        m2 = md - mdLimite
-        As1 = mdLimite / ((alturaUtilDaviga - 0.4 * x2) * fyd)
-        areaDeAcoPost = m2 / ((alturaUtilDaviga - dlinha.value) * fyd)
-        areaTotal = As1 + areaDeAcoPost
-        return [areaDeAcoPost, areaTotal]
+        
+        
+        if(dlinha.length === 0){
+            divDlinha.style.display = 'flex'
+            classeMaeEntradas[6].style.backgroundColor = "#ffdddd" 
+            return NaN
+        }else{
+            aviso.style.display = "none"
+            classeMaeEntradas[6].style.backgroundColor = "#ecf5ff"
+            m2 = md - mdLimite
+            As1 = mdLimite / ((alturaUtilDaviga - 0.4 * x2) * fyd)
+            areaDeAcoPost = m2 / ((alturaUtilDaviga - dlinha) * fyd)
+            areaTotal = As1 + areaDeAcoPost
+            return [areaDeAcoPost.toFixed(casasLong), areaTotal.toFixed(casasLong)]
+        }
+        
+        
     }
 
     
@@ -61,7 +75,10 @@ btnArmLong.onclick = function (){
         classeMaeEntradas[3].value,
         classeMaeEntradas[4].value,
         classeMaeEntradas[5].value,
-        classeMaeEntradas[6]
+        document.getElementById('dlinha'),
+        classeMaeEntradas[6].value,
+        document.getElementsByClassName("Aviso")[0]
     )
+    
     console.log(valor)
 }
