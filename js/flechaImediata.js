@@ -100,7 +100,7 @@ function calculoFlechaImediata(alturaViga, alturaUtilViga,
 
     console.log("fi")
     console.log(Fi)
-    alert('fi ' + Fi)
+    alert('fi ' + Fi.toFixed())
 
 
 

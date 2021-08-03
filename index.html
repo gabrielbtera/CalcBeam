@@ -233,19 +233,19 @@
                 </div>
     
                 <div class="seletorGeral" id = 'SeletorFlechaDiferida' >
-                    <select  data-size="4"  class= "seletorGeralInterno" name="select">
+                    <select  data-size="4"  class= "seletorGeralInterno" id="seletorGeralInternoDiferida" name="select">
                         <option  id="vazioDiferida" value="semAgregado" selected>Insira o tempo em mês</option>
-                        <option value="nehumMesDiferida" >Nenhum mês</option>
-                        <option value="metadeMesDiferida" >Metade de um mês</option>
-                        <option value="umMEs">1 mês</option>
-                        <option value="calcario">2 meses</option>
-                        <option value="arenito">3 meses</option>
-                        <option value="arenito">4 meses</option>
-                        <option value="arenito">5 meses</option>
-                        <option value="arenito">10 meses</option>
-                        <option value="arenito">20 meses</option>
-                        <option value="arenito">40 meses</option>
-                        <option value="arenito">70 meses ou mais</option>
+                        <option value="0" >Nenhum mês</option>
+                        <option value="0.54" >Metade de um mês</option>
+                        <option value="0.68">1 mês</option>
+                        <option value="0.84">2 meses</option>
+                        <option value="0.95">3 meses</option>
+                        <option value="1.04">4 meses</option>
+                        <option value="1.12">5 meses</option>
+                        <option value="1.36">10 meses</option>
+                        <option value="1.64">20 meses</option>
+                        <option value="1.89">40 meses</option>
+                        <option value="2">70 meses ou mais</option>
                     </select>
                 </div>
     
@@ -278,40 +278,44 @@
                 </div>
                 <div class="repeticao">
                     <div class="alinhamentoCalculos">
-                        <label class="legendas"> Valor da parcela de carga (KN). (opcional) </label>
+                        <label class="legendas"> Valor da parcela de carga (KN).  </label>
                         <input class="entradas" type="text" name="entradasFlechaD">
                     </div>
         
                     <div class="alinhamentoCalculos">
-                        <label class="legendas"> Tempo de aplicação da parcela de carga (dias)</label>
+                        <label class="legendas"> Tempo de aplicação da parcela de carga (caso haja) (dias)</label>
                         <input class="entradas" type="text" name="entradasFlechaD">
                     </div>
         
                     <div class="alinhamentoCalculos">
                         <div class="respdif">
-                            <div id= "exibeValor">
+                            <div class="emtornoresposta">
                                 <label class="legendasValores"> Carga x Tempo:</label>
-                                <p class="respText">12345</p>
+                                <div class= "exibeValor">
+                                    <p value='0' class="respText" id="cargaTempo"></p>
                                 
-                                
+                                </div>
                             </div>
-                            <div id= "exibeValor">
+
+                            <div class="emtornoresposta">
                                 <label class="legendasValores"> Soma Cargas:</label>
-                                <p class="respText">12345sssss</p>
-                                
-                                
+                                <div class= "exibeValor">
+                                    <p class="respText" id="somacarga"></p>
+                                </div>
+                            
                             </div>
                             
                             
                             
-                            <button class="btnInsereDif">
+                            
+                            <button class="btnInsereDif" id='btnInsereDif'>
                                 Novos Valores
                             </button>
                         </div>
                     </div>
                 </div>
                 <div class="btnsalinhamentoCalculos" >
-                    <button class="buttonResolveConta" id="btnFlechaI">
+                    <button class="buttonResolveConta" id="btnFlechaDiferida">
                         Calcular
                     </button> 
                 </div>
@@ -511,6 +515,7 @@
     </div>
   
 </body>
+    <script src='js/flechaDiferida.js'></script>
     <script src='js/flechaImediata.js'></script>
     <script src='js/longitudinal.js'></script>
     <script src="js/interacoes.js"></script>
