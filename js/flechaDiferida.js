@@ -84,7 +84,7 @@ function mainFlechaDiferida(flechaImediata, seletor,condicaoArmsimples,
 
 
     // Verifica o  proximo valor do tempo se o valor foi adicionado ou não.
-    if (parseFloat(flagVerificaTempo.value) != parseFloat( document.getElementById("guardaValor2"))){
+    if (parseFloat(flagVerificaTempo.value) != parseFloat( document.getElementById("guardaValor2").value)){
 
          // Exibe o aviso de dados que não foram dicionados
         document.getElementById("avisoValores").innerHTML = "Por favor, clique em adicionar valores"
