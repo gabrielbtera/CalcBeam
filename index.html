@@ -276,6 +276,7 @@
                     </div>
                     
                 </div>
+               
                 <div class="repeticao">
                     <div class="alinhamentoCalculos">
                         <label class="legendas"> Valor da parcela de carga (KN).  </label>
@@ -288,7 +289,12 @@
                     </div>
         
                     <div class="alinhamentoCalculos">
+                        <div class="warnning">
+                            <label id="avisoValores" class="avisoValores">Valores Adicionados!</label>
+                        </div>
+                       
                         <div class="respdif">
+                           
                             <div class="emtornoresposta">
                                 <label class="legendasValores"> Carga x Tempo:</label>
                                 <div class= "exibeValor">
@@ -299,19 +305,21 @@
 
                             <div class="emtornoresposta">
                                 <label class="legendasValores"> Soma Cargas:</label>
-                                <div class= "exibeValor">
+                                <div class= "exibeValor"  id="guardaValor">
                                     <p class="respText" id="somacarga"></p>
                                 </div>
                             
                             </div>
-                            
-                            
-                            
-                            
-                            <button class="btnInsereDif" id='btnInsereDif'>
-                                Novos Valores
-                            </button>
+
+                            <div class="condicionaisBotaoNovosValores">
+                                <button class="btnInsereDif" value="0" id='btnInsereDif'>
+                                    Adicionar Valores
+                                </button>
+                               
+                            </div>
                         </div>
+                        
+                        
                     </div>
                 </div>
                 <div class="btnsalinhamentoCalculos" >

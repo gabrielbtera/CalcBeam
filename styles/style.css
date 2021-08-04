@@ -63,7 +63,7 @@ p {
     justify-content: center;
     flex-direction: column;
     align-items: center;
-    overflow: scroll;
+   
 
 }
 .legendasValores {
@@ -82,10 +82,15 @@ p {
     color: #FFF;
     box-shadow: rgb(138, 138, 138) 0px 2px 3px;
     border-radius: 5px;  
-    height: 5rem;
+    height: 4rem;
+    margin : 15px
     
 
-}.btnInsereDif:hover {
+}#btnInsereDifNao {
+    background-color: #ff0000;
+}
+
+.btnInsereDif:hover {
     background-color: #005fcc;
 }.btnInsereDif:active{
     background-color: #004594;
@@ -94,6 +99,10 @@ p {
     flex-direction: column;
     align-items: center;
     margin : 3px
+}.condicionaisBotaoNovosValores{
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 /* ------------------------------------------------------------ */
@@ -293,6 +302,19 @@ p {
     display: none;
 }
 
+.avisoResolvido {
+    color: #07db00;
+    font-weight: bolder;
+
+}.warnning{
+    
+    align-items: center;
+    justify-content: center;
+    display: none;
+}
+#avisoValores {
+    font-weight: bolder;
+}
 
 @media screen and (max-width: 595px) {
     .alinamentoInputs {

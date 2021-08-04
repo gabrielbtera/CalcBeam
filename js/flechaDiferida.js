@@ -15,9 +15,14 @@ function calculoDaFlechaDiferida(
     condicaoArmDupla,
     alturaUtilViga,larguraDaViga, 
     armCompressao, parcelaCarga,  
-    tempoParcelaCarga, cargaxtempo, somacarga
+    tempoParcelaCarga, cargaxtempo, somacarga, flagVerificaTempo
 ){
 
+    
+
+    flagVerificaTempo.value = tempoParcelaCarga
+    console.log(flagVerificaTempo.value)
+    
     // Vertifica se a armaduara é simples ou dupla
     if(condicaoArmDupla.checked){
         ro = armCompressao / (larguraDaViga * alturaUtilViga)
@@ -25,6 +30,7 @@ function calculoDaFlechaDiferida(
         ro = 0
     }
 
+    
     // Verifica na pagina se a parcela de carga esta vazia e armazena em pc
     
     if (parcelaCarga.value === ''){
@@ -62,33 +68,65 @@ function calculoDaFlechaDiferida(
 
         somacarga.innerHTML = auxiliar.toFixed(3)
     }
+    
     return [parseFloat(cargaxtempo.value), parseFloat(somacarga.value), ro]
 
 }
 
 
 function mainFlechaDiferida(flechaImediata, seletor,condicaoArmsimples,
-    condicaoArmDupla,armCompressao,  larguraDaViga, alturaUtilViga, cargaxtempo, somacarga){
+    condicaoArmDupla,armCompressao,tempoParcelaCarga ,larguraDaViga, alturaUtilViga, cargaxtempo, somacarga, 
+    flagVerificaTempo){
+
+    // Esta função é o main da flecha diferida, ela será chamada no onclick do botão calcular
     
-    if(condicaoArmDupla.checked){
-        ro = armCompressao / (larguraDaViga * alturaUtilViga)
-    }else if(condicaoArmsimples.checked){
-        ro = 0
+
+
+    // Verifica o  proximo valor do tempo se o valor foi adicionado ou não.
+    if (parseFloat(flagVerificaTempo.value) != parseFloat(tempoParcelaCarga)){
+
+         // Exibe o aviso de dados que não foram dicionados
+        document.getElementById("avisoValores").innerHTML = "Por favor, clique em adicionar valores"
+        document.getElementsByClassName('warnning')[0].style.display = "flex"
+        document.getElementById("avisoValores").style.color = '#ff0000'
+
+        return false
+    }else{
+        if(condicaoArmDupla.checked){
+            ro = armCompressao / (larguraDaViga * alturaUtilViga)
+        }else if(condicaoArmsimples.checked){
+            ro = 0
+        }
+        
+        t0 = parseFloat(cargaxtempo.value) / parseFloat(somacarga.value)
+       
+        Et0 = 0.68 * (Math.pow(0.996, t0)) * (Math.pow(t0, 0.32))
+        
+        deltaE = parseFloat(seletor.options[seletor.selectedIndex].value) - Et0
+        alfaf = deltaE / (1 + 50 * ro)
+    
+        fd = flechaImediata * alfaf
+        ft = flechaImediata * (1 + alfaf)
+
+        
+        // Verifica se o restorno foi calculado ou não
+        if (isNaN(fd) || isNaN(ft) == NaN){
+            console.log("Por favor, clique em adicionar valores")
+            return false
+        }else{
+            return [fd, ft]
+        }
+        
+
     }
     
-    t0 = parseFloat(cargaxtempo.value) / parseFloat(somacarga.value)
-   
-    Et0 = 0.68 * (Math.pow(0.996, t0)) * (Math.pow(t0, 0.32))
     
-    deltaE = parseFloat(seletor.options[seletor.selectedIndex].value) - Et0
-    alfaf = deltaE / (1 + 50 * ro)
 
-    fd = flechaImediata * alfaf
-    ft = flechaImediata * (1 + alfaf)
+    
 
-    // PRECISA FAZER O BOTÃO DE CÁLCULO  DIRETO.
+    
 
-    return [fd, ft]
+    
 }
 
 
@@ -104,10 +142,22 @@ btnInsereDiferida.onclick = function(){
         classeMaeEntradasDiferida[4],                   // parcela de carga=
         parseFloat(classeMaeEntradasDiferida[5].value), // Tempo Parcela de carga
         document.getElementById('cargaTempo'),          // carga x tempo=
-        document.getElementById('somacarga')            // soma carga=
-
+        document.getElementById('somacarga'),           // soma carga=
+        document.getElementById("guardaValor")
 
     )
+
+    classeMaeEntradasDiferida[4].value = "" 
+    classeMaeEntradasDiferida[5].value = ""   
+
+
+
+    // Exibe o aviso de dados adicionados
+    document.getElementById("avisoValores").style.color = '#07db00'
+    document.getElementById("avisoValores").innerHTML = "Valores Adicionados!"
+
+    document.getElementsByClassName('warnning')[0].style.display = "flex"
+    setTimeout(function(){ document.getElementsByClassName('warnning')[0].style.display = "none" }, 2000);
     console.log(valor)
 
     
@@ -116,16 +166,20 @@ btnInsereDiferida.onclick = function(){
 btnFlechaDiferida.onclick = function(){
 
     mainValor = mainFlechaDiferida(
-        parseFloat(classeMaeEntradasDiferida[0].value),
+        parseFloat(classeMaeEntradasDiferida[0].value), // flecha diferida
         document.getElementById('seletorGeralInternoDiferida'),
         document.getElementById('armSimples'),
         document.getElementById('armDupla'),
-        parseFloat(classeMaeEntradasDiferida[3].value),
-        parseFloat(classeMaeEntradasDiferida[2].value),
-        parseFloat(classeMaeEntradasDiferida[1].value),
+        parseFloat(classeMaeEntradasDiferida[3].value), // armCompressao
+        parseFloat(classeMaeEntradasDiferida[5].value), // tmpoParceCarga
+        parseFloat(classeMaeEntradasDiferida[2].value), // largura da viga
+        parseFloat(classeMaeEntradasDiferida[1].value), // altura util da viga
         document.getElementById('cargaTempo'),          // carga x tempo=
-        document.getElementById('somacarga')            // soma carga=
-    )
+        document.getElementById('somacarga'),            // soma carga=
+        document.getElementById("guardaValor")
+        )
+
+
 
     console.log(mainValor)
 
