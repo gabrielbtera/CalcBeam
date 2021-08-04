@@ -4,12 +4,11 @@ var btnInsereDiferida = document.getElementById('btnInsereDif')
 
 var btnFlechaDiferida = document.getElementById('btnFlechaDiferida')
 
-
-var somaCarga = document.getElementById('somacarga');
-
+var somaCarga = document.getElementById('somacarga')
 
 
 
+// faz as adicioões dos valoresa para o cáculo final.
 function calculoDaFlechaDiferida(
     condicaoArmsimples, 
     condicaoArmDupla,
@@ -40,37 +39,54 @@ function calculoDaFlechaDiferida(
         pc = parseFloat(parcelaCarga.value)
     }
 
-    t0i = tempoParcelaCarga
-    t0i = t0i / 30
-
-    somatorio1 = pc *  t0i
-
-
-    // CARGA X TEMPO: verifica os values da pagina e armazena nele para o proximo somatório
-    if (cargaxtempo.value === undefined){
-        cargaxtempo.value = somatorio1
-        cargaxtempo.innerHTML = somatorio1.toFixed(3)
-    }else{
-         auxiliar = parseFloat(cargaxtempo.value) + somatorio1
-         cargaxtempo.value = auxiliar
-         cargaxtempo.innerHTML = auxiliar.toFixed(3)
-
-    }
     
-     // SOMA CARGA: verifica os values da pagina e armazena nele para o proximo somatório
-     
-    if(somacarga.value === undefined){
-
-        somacarga.value = pc.toFixed(3)
-        somacarga.innerHTML = pc
+    // VERIFICA SE O TEMPO FOI ADICIONADO
+    if (isNaN(tempoParcelaCarga)){
+        document.getElementById("avisoValores").innerHTML = "Por favor, clique em adicionar valores"
+        document.getElementsByClassName('warnning')[0].style.display = "flex"
+        document.getElementById("avisoValores").style.color = '#ff0000'
+        return false
     }else{
-        auxiliar = pc + parseFloat(somacarga.value)
-        somacarga.value = auxiliar
 
-        somacarga.innerHTML = auxiliar.toFixed(3)
+        t0i = tempoParcelaCarga
+        t0i = t0i / 30
+
+        somatorio1 = pc *  t0i
+
+
+        // CARGA X TEMPO: verifica os values da pagina e armazena nele para o proximo somatório
+        if (cargaxtempo.value === undefined){
+            cargaxtempo.value = somatorio1
+            cargaxtempo.innerHTML = somatorio1.toFixed(3)
+        }else{
+            auxiliar = parseFloat(cargaxtempo.value) + somatorio1
+            cargaxtempo.value = auxiliar
+            cargaxtempo.innerHTML = auxiliar.toFixed(3)
+
+        }
+        
+        // SOMA CARGA: verifica os values da pagina e armazena nele para o proximo somatório
+        
+        if(somacarga.value === undefined){
+
+            somacarga.value = pc.toFixed(3)
+            somacarga.innerHTML = pc
+        }else{
+            auxiliar = pc + parseFloat(somacarga.value)
+            somacarga.value = auxiliar
+
+            somacarga.innerHTML = auxiliar.toFixed(3)
+        }
+        document.getElementById("avisoValores").style.color = '#07db00'
+        document.getElementById("avisoValores").innerHTML = "Valores Adicionados!"
+
+        document.getElementsByClassName('warnning')[0].style.display = "flex"
+        setTimeout(function(){ document.getElementsByClassName('warnning')[0].style.display = "none" }, 1000);
+        
+        return [parseFloat(cargaxtempo.value), parseFloat(somacarga.value), ro]
     }
+
     
-    return [parseFloat(cargaxtempo.value), parseFloat(somacarga.value), ro]
 
 }
 
@@ -112,7 +128,9 @@ function mainFlechaDiferida(flechaImediata, seletor,condicaoArmsimples,
         
         // Verifica se o restorno foi calculado ou não
         if (isNaN(fd) || isNaN(ft) == NaN){
-            console.log("Por favor, clique em adicionar valores")
+            document.getElementById("avisoValores").innerHTML = "Por favor, clique em adicionar valores"
+            document.getElementsByClassName('warnning')[0].style.display = "flex"
+            document.getElementById("avisoValores").style.color = '#ff0000'
             return false
         }else{
             return [fd, ft]
@@ -120,14 +138,7 @@ function mainFlechaDiferida(flechaImediata, seletor,condicaoArmsimples,
         
 
     }
-    
-    
 
-    
-
-    
-
-    
 }
 
 
@@ -148,16 +159,6 @@ btnInsereDiferida.onclick = function(){
 
     )
 
-    
-
-
-
-    // Exibe o aviso de dados adicionados
-    document.getElementById("avisoValores").style.color = '#07db00'
-    document.getElementById("avisoValores").innerHTML = "Valores Adicionados!"
-
-    document.getElementsByClassName('warnning')[0].style.display = "flex"
-    setTimeout(function(){ document.getElementsByClassName('warnning')[0].style.display = "none" }, 2000);
     console.log(valor)
     classeMaeEntradasDiferida[4].value = "" 
     classeMaeEntradasDiferida[5].value = ""   

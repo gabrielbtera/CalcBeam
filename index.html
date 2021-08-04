@@ -279,12 +279,12 @@
                
                 <div class="repeticao">
                     <div class="alinhamentoCalculos">
-                        <label class="legendas"> Valor da parcela de carga (KN).  </label>
+                        <label class="legendas"> Valor da parcela de carga  (caso haja) (KN).  </label>
                         <input class="entradas" type="text" name="entradasFlechaD">
                     </div>
         
                     <div class="alinhamentoCalculos">
-                        <label class="legendas"> Tempo de aplicação da parcela de carga (caso haja) (dias)</label>
+                        <label class="legendas"> Tempo de aplicação da parcela de carga(dias)</label>
                         <input class="entradas" type="text" name="entradasFlechaD">
                     </div>
         
@@ -375,7 +375,7 @@
                 </div>
 
                 <div class="alinhamentoCalculos">
-                    <label  class="legendas">Força constante de cálculo (KN): </label>
+                    <label  class="legendas">Força cortante de cálculo (KN): </label>
                     <input class="entradas" type="text" name="entradasArmLong">
                 </div>
                 <div class="alinhamentoCalculos">
@@ -413,7 +413,7 @@
 
                 </div>
                 <div class="btnsalinhamentoCalculos" >
-                    <button class="buttonResolveConta" id="btnArmLong">
+                    <button class="buttonResolveConta" id="btnCalcTransversal">
                         Calcular
                     </button> 
                 </div>
@@ -523,6 +523,7 @@
     </div>
   
 </body>
+    <script src='js/transversal.js'></script>
     <script src='js/flechaDiferida.js'></script>
     <script src='js/flechaImediata.js'></script>
     <script src='js/longitudinal.js'></script>
