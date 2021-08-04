@@ -21,7 +21,8 @@ function calculoDaFlechaDiferida(
     
 
     flagVerificaTempo.value = tempoParcelaCarga
-    console.log(flagVerificaTempo.value)
+    document.getElementById("guardaValor2").value = tempoParcelaCarga // adicionano o value da na div caraga x tempo
+    
     
     // Vertifica se a armaduara é simples ou dupla
     if(condicaoArmDupla.checked){
@@ -83,7 +84,7 @@ function mainFlechaDiferida(flechaImediata, seletor,condicaoArmsimples,
 
 
     // Verifica o  proximo valor do tempo se o valor foi adicionado ou não.
-    if (parseFloat(flagVerificaTempo.value) != parseFloat(tempoParcelaCarga)){
+    if (parseFloat(flagVerificaTempo.value) != parseFloat( document.getElementById("guardaValor2"))){
 
          // Exibe o aviso de dados que não foram dicionados
         document.getElementById("avisoValores").innerHTML = "Por favor, clique em adicionar valores"
