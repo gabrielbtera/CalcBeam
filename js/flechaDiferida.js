@@ -147,8 +147,7 @@ btnInsereDiferida.onclick = function(){
 
     )
 
-    classeMaeEntradasDiferida[4].value = "" 
-    classeMaeEntradasDiferida[5].value = ""   
+    
 
 
 
@@ -159,6 +158,8 @@ btnInsereDiferida.onclick = function(){
     document.getElementsByClassName('warnning')[0].style.display = "flex"
     setTimeout(function(){ document.getElementsByClassName('warnning')[0].style.display = "none" }, 2000);
     console.log(valor)
+    classeMaeEntradasDiferida[4].value = "" 
+    classeMaeEntradasDiferida[5].value = ""   
 
     
 }
