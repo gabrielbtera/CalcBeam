@@ -1,5 +1,4 @@
 
-// var v = document.getElementById()
 
 
 // menu principal abrir/fechar

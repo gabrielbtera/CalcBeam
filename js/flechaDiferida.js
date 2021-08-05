@@ -1,3 +1,7 @@
+
+import { limparCampos, limpaSeletor } from "./botaoLimpar.js"
+
+
 var classeMaeEntradasDiferida = document.getElementById('calculoDaFlechaDiferida').children[0].children[1].getElementsByClassName('entradas')
 
 var btnInsereDiferida = document.getElementById('btnInsereDif')
@@ -7,6 +11,7 @@ var btnFlechaDiferida = document.getElementById('btnFlechaDiferida')
 var somaCarga = document.getElementById('somacarga')
 
 
+var ft, fd, deltaE, alfaf, Et0, somatorio1, t0, pc, ro, t0i  = 0
 
 // faz as adicioões dos valoresa para o cáculo final.
 function calculoDaFlechaDiferida(
@@ -69,8 +74,8 @@ function calculoDaFlechaDiferida(
         
         if(somacarga.value === undefined){
 
-            somacarga.value = pc.toFixed(3)
-            somacarga.innerHTML = pc
+            somacarga.value = pc
+            somacarga.innerHTML = pc.toFixed(3)
         }else{
             auxiliar = pc + parseFloat(somacarga.value)
             somacarga.value = auxiliar
@@ -145,7 +150,7 @@ function mainFlechaDiferida(flechaImediata, seletor,condicaoArmsimples,
 btnInsereDiferida.onclick = function(){
     
 
-    valor = calculoDaFlechaDiferida(
+    var valor = calculoDaFlechaDiferida(
         document.getElementById('armSimples'),
         document.getElementById('armDupla'),            
         parseFloat(classeMaeEntradasDiferida[1].value),  // altura util viga
@@ -168,7 +173,7 @@ btnInsereDiferida.onclick = function(){
 
 btnFlechaDiferida.onclick = function(){
 
-    mainValor = mainFlechaDiferida(
+    var mainValor = mainFlechaDiferida(
         parseFloat(classeMaeEntradasDiferida[0].value), // flecha diferida
         document.getElementById('seletorGeralInternoDiferida'),
         document.getElementById('armSimples'),
@@ -186,7 +191,23 @@ btnFlechaDiferida.onclick = function(){
 
     console.log(mainValor)
 
+}
 
+// Limpar campos Diferida
 
+var btnLimparCampos = document.getElementsByClassName('botaoLimpar')[2]
+
+btnLimparCampos.onclick = function(){
+    limparCampos(classeMaeEntradasDiferida, [
+        document.getElementById('cargaTempo'),
+        document.getElementById('somacarga'),          
+        document.getElementById("guardaValor"),
+        document.getElementById("guardaValor2")
+    ], 
+    [document.getElementById('cargaTempo'), 
+     document.getElementById('somacarga')]
+    )
+    
+   limpaSeletor(document.getElementById('seletorGeralInternoDiferida'))
 }
 
