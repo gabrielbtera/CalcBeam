@@ -84,7 +84,7 @@ function calculoDaFlechaDiferida(
 
             somacarga.innerHTML = auxiliar.toFixed(3)
         }
-        document.getElementById("avisoValores").style.color = '#07db00'
+        document.getElementById("avisoValores").style.color = '#108b24'
         document.getElementById("avisoValores").innerHTML = "Valores Adicionados!"
 
         document.getElementsByClassName('warnning')[0].style.display = "flex"
