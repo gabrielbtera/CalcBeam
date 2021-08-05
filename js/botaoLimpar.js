@@ -9,11 +9,14 @@ export function limparCampos( listaCampos, diferida = false, exibicaoDiferida = 
     function limparCamposInternos(listaCampos, flag){
         if (flag){
             for (let i = 0; i < listaCampos.length ; i++){
+                
                 listaCampos[i].value = ""
+               
             }
         }else{
             for (let i = 0; i < listaCampos.length ; i++){
                 listaCampos[i].innerHTML = ""
+                
             }
         }
         

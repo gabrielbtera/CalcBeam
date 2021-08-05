@@ -11,7 +11,7 @@ var btnFlechaDiferida = document.getElementById('btnFlechaDiferida')
 var somaCarga = document.getElementById('somacarga')
 
 
-var ft, fd, deltaE, alfaf, Et0, somatorio1, t0, pc, ro, t0i  = 0
+var ft, fd, deltaE, alfaf, Et0, somatorio1, t0, pc, ro, t0i, auxiliar  = 0
 
 // faz as adicioões dos valoresa para o cáculo final.
 function calculoDaFlechaDiferida(
@@ -60,10 +60,11 @@ function calculoDaFlechaDiferida(
 
 
         // CARGA X TEMPO: verifica os values da pagina e armazena nele para o proximo somatório
-        if (cargaxtempo.value === undefined){
+        if (cargaxtempo.value === "" || cargaxtempo.value === undefined){
             cargaxtempo.value = somatorio1
             cargaxtempo.innerHTML = somatorio1.toFixed(3)
         }else{
+            console.log('caraga tempo',cargaxtempo.value)
             auxiliar = parseFloat(cargaxtempo.value) + somatorio1
             cargaxtempo.value = auxiliar
             cargaxtempo.innerHTML = auxiliar.toFixed(3)
@@ -72,11 +73,12 @@ function calculoDaFlechaDiferida(
         
         // SOMA CARGA: verifica os values da pagina e armazena nele para o proximo somatório
         
-        if(somacarga.value === undefined){
+        if(somacarga.value === "" || somacarga.value === undefined){
 
             somacarga.value = pc
             somacarga.innerHTML = pc.toFixed(3)
         }else{
+            console.log("soma carga",typeof somacarga.value)
             auxiliar = pc + parseFloat(somacarga.value)
             somacarga.value = auxiliar
 
@@ -102,10 +104,10 @@ function mainFlechaDiferida(flechaImediata, seletor,condicaoArmsimples,
 
     // Esta função é o main da flecha diferida, ela será chamada no onclick do botão calcular
     
-
+    console.log(flagVerificaTempo.value, parseFloat( tempoParcelaCarga))
 
     // Verifica o  proximo valor do tempo se o valor foi adicionado ou não.
-    if (parseFloat(flagVerificaTempo.value) != parseFloat( document.getElementById("guardaValor2").value)){
+    if (parseFloat(flagVerificaTempo.value) != parseFloat(tempoParcelaCarga) && !isNaN(parseFloat(tempoParcelaCarga))){
 
          // Exibe o aviso de dados que não foram dicionados
         document.getElementById("avisoValores").innerHTML = "Por favor, clique em adicionar valores"
