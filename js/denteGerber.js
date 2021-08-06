@@ -1,3 +1,5 @@
+import { limparCampos, limpaSeletor } from "./botaoLimpar.js"
+
 var classeMaeEntradasDenteGerber = document.getElementById('calculoDenteGerber').children[0].children[1].getElementsByClassName('entradas')
 var btnDenteGerber = document.getElementById("btnDenteGerber")
 
@@ -76,4 +78,10 @@ btnDenteGerber.onclick = function(){
         parseFloat(classeMaeEntradasDenteGerber[11].value)  // dimensaoE
     )
     
+}
+
+document.getElementById("btnLimpaGerber").onclick = function(){
+    limparCampos(classeMaeEntradasDenteGerber)
+    
+
 }

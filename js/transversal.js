@@ -1,3 +1,5 @@
+import { limparCampos } from "./botaoLimpar.js"
+
 var classeMaeEntradasTransversal = document.getElementById('calculoDaArmTrans').children[0].children[1].getElementsByClassName('entradas')
 var btnCalcTransversal = document.getElementById("btnCalcTransversal")
 
@@ -97,4 +99,10 @@ btnCalcTransversal.onclick = function (){
         parseFloat(classeMaeEntradasTransversal[7].value),
         parseFloat(classeMaeEntradasTransversal[8].value)
     )
+}
+
+document.getElementById("btnLimpaArmTrnasversal").onclick = function(){
+    limparCampos(classeMaeEntradasTransversal)
+    
+
 }

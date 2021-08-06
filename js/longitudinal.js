@@ -1,4 +1,7 @@
+import { limparCampos } from "./botaoLimpar.js"
+
 var classeMaeEntradas = document.getElementById('calculoDaArmlong').children[0].children[1].getElementsByClassName('entradas')
+
 var btnArmLong = document.getElementById('btnArmLong')
 
 let condicionalMomentCalc = document.getElementById('condmomentocalc')
@@ -65,7 +68,7 @@ function calculoDaArmlongitudinal(
 
 
 
-
+// calcula armadura longitudinal.
 btnArmLong.onclick = function (){
     
     let valor = calculoDaArmlongitudinal(
@@ -81,4 +84,12 @@ btnArmLong.onclick = function (){
     )
     
     console.log(valor)
+}
+
+// Limpa campos
+
+document.getElementById("btnLimpaArmLong").onclick = function(){
+    limparCampos(classeMaeEntradas)
+    
+
 }

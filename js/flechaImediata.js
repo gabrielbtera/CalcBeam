@@ -1,3 +1,5 @@
+import { limparCampos, limpaSeletor } from "./botaoLimpar.js"
+
 var classeMaeEntradasImediata = document.getElementById('calculoDaFlechaImediata').children[0].children[1].getElementsByClassName('entradas')
 
 var seletorImediata = document.getElementById('seletorGeralInterno')
@@ -131,5 +133,11 @@ btnflechaI.onclick = function(){
     // console.log(seletorImediata.options)
 
     // console.log(seletorImediata.options[seletorImediata.selectedIndex].value )
+}
+
+document.getElementById("btnLimpaImediata").onclick = function(){
+    limparCampos(classeMaeEntradasImediata)
+    limpaSeletor(document.getElementById("seletorGeralInterno"))
+
 }
 

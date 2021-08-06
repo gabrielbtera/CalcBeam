@@ -1,15 +1,10 @@
-
 import { limparCampos, limpaSeletor } from "./botaoLimpar.js"
-
 
 var classeMaeEntradasDiferida = document.getElementById('calculoDaFlechaDiferida').children[0].children[1].getElementsByClassName('entradas')
 
 var btnInsereDiferida = document.getElementById('btnInsereDif')
 
 var btnFlechaDiferida = document.getElementById('btnFlechaDiferida')
-
-var somaCarga = document.getElementById('somacarga')
-
 
 var ft, fd, deltaE, alfaf, Et0, somatorio1, t0, pc, ro, t0i, auxiliar  = 0
 
