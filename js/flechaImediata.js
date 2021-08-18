@@ -67,8 +67,22 @@ function calculoFlechaImediata(alturaViga, alturaUtilViga,
 
     }if(dupla){
         as2 = armCompresao
-        xii = -(alphae * armDeTração + (alphae - 1) * as2) + (Math.pow(4*(larguraViga / 2) * -(alphae * armDeTração * alturaUtilViga + (alphae - 1) * as2 * dArmDupla), 1/2)) / larguraViga
-        Iii = (larguraViga * (Math.pow(xii, 3))) / 12 * larguraViga * xii * (Math.pow(xii / 2 , 2)) + alphae * armDeTração *(Math.pow(alturaUtilViga - xii, 2)) + (alphae - 1) * as2 * (Math.pow(alturaUtilViga - xii, 2)) 
+        ca = larguraViga / 2
+        cl = alphae * (armDeTração) + (alphae - 1) * as2
+        ti = -(alphae * armDeTração * alturaUtilViga + (alphae - 1) * as2 * dArmDupla)
+        delta = Math.pow(cl, 2) - 4 * ca * ti
+        x1 = (-cl + (Math.pow(delta, 1/2))) / (2 * ca)
+        x2 = (-cl - (Math.pow(delta, 1/2))) / (2 * ca) 
+
+        if(x1 < 0){
+            xii = x2
+
+        }else if (x2 < 0){
+            xii = x1
+
+        }
+        Iii = (larguraViga * (Math.pow(xii, 3))) / 12 * larguraViga * xii * (Math.pow(xii / 2 , 2)) + alphae * armDeTração *(Math.pow(alturaUtilViga - xii, 2)) + (alphae - 1) * as2 * (Math.pow(alturaUtilViga - xii, 2))
+         
     }if(resistenciaConcreto <= 50){
         fctm = 0.3 * Math.pow(resistenciaConcreto, 2/3) 
     }if (resistenciaConcreto > 50 && resistenciaConcreto <= 90){

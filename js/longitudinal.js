@@ -1,4 +1,5 @@
 import { limparCampos } from "./botaoLimpar.js"
+import {resultados} from "./respostas.js"
 
 var classeMaeEntradas = document.getElementById('calculoDaArmlong').children[0].children[1].getElementsByClassName('entradas')
 
@@ -11,6 +12,8 @@ let areaDeAcoPost = 0
 let areaTotal = 0
 
 let casasLong = 2
+
+let md, fcd, fyd, x1, x2, mdLimite,m2, As1 = 0
 
 function calculoDaArmlongitudinal(
     alturaUtilDaviga,  larguraDaViga, 
@@ -41,7 +44,7 @@ function calculoDaArmlongitudinal(
     if(mdLimite >= md){
         areaDeAcoPost = md/((alturaUtilDaviga - 0.4 * x1) * fyd)
         
-        return [areaDeAcoPost.toFixed(casasLong)]
+        return [{"A área de aço da armadura simples é:" : areaDeAcoPost.toFixed(casasLong)}]
 
     }if(mdLimite < md){
         
@@ -84,6 +87,7 @@ btnArmLong.onclick = function (){
     )
     
     console.log(valor)
+    resultados(document.getElementsByClassName("divsCalculos")[0], valor, 0, ["A área de aço da armadura simples é:"])
 }
 
 // Limpa campos
@@ -93,3 +97,7 @@ document.getElementById("btnLimpaArmLong").onclick = function(){
     
 
 }
+
+
+
+

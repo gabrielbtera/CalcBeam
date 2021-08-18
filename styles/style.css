@@ -90,6 +90,8 @@ p {
     background-color: #ff0000;
 }
 
+
+
 .btnInsereDif:hover {
     background-color: #005fcc;
 }.btnInsereDif:active{
@@ -205,6 +207,8 @@ p {
     box-shadow: 1px 1px 5px;
 
 }
+
+
 .legendas {
     font-size: 0.7rem;
     color: #003c80;
@@ -266,6 +270,16 @@ p {
     margin: 2px;
 }
 
+hr {
+    /* transform: rotate(0deg); */
+    width: 0.5px;
+    background-color: #004ea7;
+    border: none;
+    margin-left: 25px;
+    margin-right: 25px; ;
+}
+
+
 
 #tresInputs {
     display: none;
@@ -316,6 +330,51 @@ p {
     font-weight: bolder;
 }
 
+/* respostas obtidas */
+
+.titutoResp, .legendaResp, .valorResp{
+    color: #003c80;
+    
+}.titutoResp, .valorResp{
+    font-weight: bold;
+}.resultadoCalculoLong {
+    margin: 25px;
+}
+
+
+.botoesResposta {
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 25px;
+    margin-top: 50px;
+    
+    
+}
+.botaoEq,.botaoFigs{
+    background-color:#0055B8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 150px;
+    height: 30px;
+    font-size: 13px;
+   
+    color: #fff;
+    border-radius: 5px;
+    box-shadow: rgb(138, 138, 138) 0px 2px 3px;
+    margin: 20px;
+}.botaoEq:hover{
+    background-color: #005fcc;
+}.botaoEq:active {
+    background-color: #004594;
+}.botaoFigs {
+    background-color: #006ae4;
+}.botaoFigs:active{
+    background-color: #004594;
+}
+
 @media screen and (max-width: 595px) {
     .alinamentoInputs {
         
@@ -323,7 +382,13 @@ p {
         
     }.labelMenu {
         font-size: 0.7rem;
+    }.divsCalculos {
+        flex-direction: column;
+    }.resultadoCalculoLong {
+        border-top: 1px solid #0055B8;
     }
+    
+    
 }
 
 @media screen and (max-width: 425px) {

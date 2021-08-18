@@ -1,6 +1,3 @@
-
-
-
 // menu principal abrir/fechar
 var teste = document.getElementById('calculoDaArmlong');
 var checar = document.getElementById('ArmLong');
@@ -65,6 +62,7 @@ function mostrarCampo (check, tela, indice){
         limparChecksNavBar(indice)
         tela.style.display = 'flex';
         divMArcacao[indice].style.backgroundColor = "#004594"
+        divMArcacao[indice].style.fontWeight = "bold"
 
     }else {
         tela.style.display = "none";

@@ -6,6 +6,8 @@ var btnCalcTransversal = document.getElementById("btnCalcTransversal")
 var modeloDeCalculo1 = document.getElementById("condModeloCalculo1")
 var modeloDeCalculo2 = document.getElementById("condModeloCalculo2")
 
+let alpha, alfa_v2, fcd, fywd, fctd, vrd2i,vc1, vsw1, s1, razaoTetha, tetha, vrd2ii, vc0, vc2, vsw2  = 0
+
 
 function calculoDaArmaduraTransversal(
     alturaUtilViga, larguraViga, resistenciaConcreto,
@@ -50,11 +52,29 @@ function calculoDaArmaduraTransversal(
 
 
     }if(modeloDeCalculo2.checked){
+        let dic = { 30: Math.PI/6,
+                    31: Math.PI/5.81, 
+                    32: Math.PI/5.63, 
+                    33: Math.PI/5.45, 
+                    34: Math.PI/5.29, 
+                    35: Math.PI/5.14, 
+                    36: Math.PI/5,
+                    37: Math.PI/4.86, 
+                    38: Math.PI/4.74, 
+                    39: Math.PI/4.62, 
+                    40: Math.PI/4.5, 
+                    41: Math.PI/4.39, 
+                    42: Math.PI/4.29, 
+                    43: Math.PI/4.19,
+                    44: Math.PI/4.09, 
+                    45: Math.PI/4
+                }
+        
         if (anguloCalc2 >= 30 && anguloCalc2 <= 45){
-            razaoTetha =  Math.PI / anguloCalc2
-            tetha = Math.PI / razaoTetha
             
-            vrd2ii = 0.54 * alfa_v2 * fcd * larguraViga * alturaUtilViga * Math.sin(tetha) * ((Math.cos(alpha) / Math.sin(alpha)) + ((Math.cos(tetha) / Math.sin(tetha))))
+            tetha = dic[anguloCalc2]
+            
+            vrd2ii = 0.54 * alfa_v2 * fcd * larguraViga * alturaUtilViga * Math.pow(Math.sin(tetha), 2) * ((Math.cos(alpha) / Math.sin(alpha)) + ((Math.cos(tetha) / Math.sin(tetha))))
             
             if(forcaCDeCalculo <= vrd2ii){
                 console.log("condicao suprida.")
