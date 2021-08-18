@@ -1,8 +1,10 @@
 import { limparCampos, limpaSeletor } from "./botaoLimpar.js"
+import {resultados, warnninggerber} from "./respostas.js"
 
 var classeMaeEntradasDenteGerber = document.getElementById('calculoDenteGerber').children[0].children[1].getElementsByClassName('entradas')
 var btnDenteGerber = document.getElementById("btnDenteGerber")
 
+var dE, fcd, fyd, fcdr, Rsd, pdEf, valorTetha, arcTg, senTetha, sigma, AsTirante, AsCostura, AsSuspensao = 0
 
 // Calculo do dente gerber
 function calcularDenteGerber(lista, resistenciaConcreto,
@@ -48,28 +50,38 @@ function calcularDenteGerber(lista, resistenciaConcreto,
 
     sigma *= 10
 
-    
+    let listaSaida = []
     // Dá a resposta dos valores
     if (sigma <= fcdr){
         console.log("A largura do aparelho é satisfatória.")
         AsTirante = Rsd / fyd
         AsCostura = AsTirante / 2
         AsSuspensao = cargaCalculo / fyd
+
+        listaSaida = [{"Área de aço da armadura do tirante: ": AsTirante},
+            {"Área de aço da armadura de Costura: ": AsCostura},
+            {"Área de aço da armadura de Suspensão: ": AsSuspensao}]
+
+
         console.log("Armadura do tirante: ",AsTirante)
         console.log("Armadura de Costura: ", AsCostura)
         console.log("Armadura de Suspensão: ", AsSuspensao)
 
     }else{
+
+        warnninggerber(document.getElementsByClassName("divsCalculos")[4], "A largura do aparelho não satisfaz.","Recomenda-se uma resvisão dos valores.")
         console.log("A largura do aparelho não satisfaz.")
         console.log("Recomenda-se uma resvisão dos valores.")
+        listaSaida = []
 
     }
+    return listaSaida
 
 }
 7
 
 btnDenteGerber.onclick = function(){
-    calcularDenteGerber(
+    var valor = calcularDenteGerber(
         classeMaeEntradasDenteGerber,                      // lista
         parseFloat(classeMaeEntradasDenteGerber[7].value), // resistenciaConcreto
         parseFloat(classeMaeEntradasDenteGerber[8].value), // resEcoamentoAco
@@ -77,6 +89,9 @@ btnDenteGerber.onclick = function(){
         parseFloat(classeMaeEntradasDenteGerber[10].value), // cargaHorizontalC
         parseFloat(classeMaeEntradasDenteGerber[11].value)  // dimensaoE
     )
+    resultados(document.getElementsByClassName("divsCalculos")[4], valor)
+
+    
     
 }
 

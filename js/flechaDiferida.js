@@ -1,4 +1,5 @@
 import { limparCampos, limpaSeletor } from "./botaoLimpar.js"
+import {resultados} from "./respostas.js"
 
 var classeMaeEntradasDiferida = document.getElementById('calculoDaFlechaDiferida').children[0].children[1].getElementsByClassName('entradas')
 
@@ -133,9 +134,9 @@ function mainFlechaDiferida(flechaImediata, seletor,condicaoArmsimples,
             document.getElementById("avisoValores").innerHTML = "Por favor, clique em adicionar valores"
             document.getElementsByClassName('warnning')[0].style.display = "flex"
             document.getElementById("avisoValores").style.color = '#ff0000'
-            return false
+            return []
         }else{
-            return [fd, ft]
+            return [{"Flecha diferida é: " : fd.toFixed(2) + ' cm'}, {"Flecha total é:" : ft.toFixed(2) + ' cm'}]
         }
         
 
@@ -185,8 +186,8 @@ btnFlechaDiferida.onclick = function(){
         )
 
 
-
-    console.log(mainValor)
+    resultados(document.getElementsByClassName("divsCalculos")[2], mainValor)
+    
 
 }
 

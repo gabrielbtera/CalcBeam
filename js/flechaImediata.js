@@ -1,4 +1,5 @@
 import { limparCampos, limpaSeletor } from "./botaoLimpar.js"
+import {resultados} from "./respostas.js"
 
 var classeMaeEntradasImediata = document.getElementById('calculoDaFlechaImediata').children[0].children[1].getElementsByClassName('entradas')
 
@@ -6,6 +7,8 @@ var seletorImediata = document.getElementById('seletorGeralInterno')
 
 
 var btnflechaI = document.getElementById("btnFlechaI")
+
+var Ecs, Eci, alphaI, ic, yt, alphae, as2, ca, cl, ti, delta, x1, x2, xii, Iii,fctm, mr, ma, EI1, EI2, EI, Fi =0
 
 function calculoFlechaImediata(alturaViga, alturaUtilViga,
     dArmDupla, larguraViga, resistenciaConcreto, deformaAco,
@@ -82,7 +85,7 @@ function calculoFlechaImediata(alturaViga, alturaUtilViga,
 
         }
         Iii = (larguraViga * (Math.pow(xii, 3))) / 12 * larguraViga * xii * (Math.pow(xii / 2 , 2)) + alphae * armDeTração *(Math.pow(alturaUtilViga - xii, 2)) + (alphae - 1) * as2 * (Math.pow(alturaUtilViga - xii, 2))
-         
+
     }if(resistenciaConcreto <= 50){
         fctm = 0.3 * Math.pow(resistenciaConcreto, 2/3) 
     }if (resistenciaConcreto > 50 && resistenciaConcreto <= 90){
@@ -114,10 +117,8 @@ function calculoFlechaImediata(alturaViga, alturaUtilViga,
 
     Fi = (5 / 384) * ((cargaInsidaViga * Math.pow(comprimentoViga, 4)) / EI)
 
-    console.log("fi")
-    console.log(Fi)
-    alert('fi ' + Fi.toFixed())
 
+    return [{"Flecha Imediata é:":  Fi.toFixed(2) + ' cm'}]
 
 
 
@@ -128,7 +129,7 @@ function calculoFlechaImediata(alturaViga, alturaUtilViga,
 
 btnflechaI.onclick = function(){
 
-    calculoFlechaImediata(
+    var valor = calculoFlechaImediata(
         parseFloat(classeMaeEntradasImediata[0].value),
         parseFloat(classeMaeEntradasImediata[1].value),
         parseFloat(classeMaeEntradasImediata[2].value),
@@ -144,9 +145,8 @@ btnflechaI.onclick = function(){
         document.getElementById('armDuplaImediata').checked
     )
 
-    // console.log(seletorImediata.options)
-
-    // console.log(seletorImediata.options[seletorImediata.selectedIndex].value )
+    resultados(document.getElementsByClassName("divsCalculos")[1], valor)
+    
 }
 
 document.getElementById("btnLimpaImediata").onclick = function(){

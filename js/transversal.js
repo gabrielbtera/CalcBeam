@@ -1,4 +1,5 @@
 import { limparCampos } from "./botaoLimpar.js"
+import {resultados, warnningtrans} from "./respostas.js"
 
 var classeMaeEntradasTransversal = document.getElementById('calculoDaArmTrans').children[0].children[1].getElementsByClassName('entradas')
 var btnCalcTransversal = document.getElementById("btnCalcTransversal")
@@ -40,14 +41,16 @@ function calculoDaArmaduraTransversal(
             vsw1 = forcaCDeCalculo - vc1
             s1 = ((areaAcoCalc1 * 0.9 * alturaUtilViga * fywd * (Math.sin(alpha) + Math.cos(alpha))) / vsw1) 
             console.log("resposta: ", s1 * 100)
-
+            return [{"O espaçamento entre estribos é:" : (s1 * 100).toFixed(2) + " cm"}]
         }
         else{
-            console.log("A condicao não foi suprida, vsd > vrd2i")
+            warnningtrans(document.getElementsByClassName("divsCalculos")[3], "A condicao não foi suprida, vsd > vrd2")
+            console.log("A condicao não foi suprida, vsd > vrd2")
             console.log("Recomenda-se: ")
             console.log("1- Alterar a concepção da estrutura, reduzindo os esforços cortantes do elemento em questão;")
             console.log("2- Aumentar as dimensões da seção, para aumentar a resistência do elemento ao esforço cortante;")
             console.log("3- Em casos especiais, elevar a resistência do concreto utilizando uma classe com fck superior;")
+            return []
         }
 
 
@@ -84,19 +87,23 @@ function calculoDaArmaduraTransversal(
                 vsw2 = forcaCDeCalculo - vc2
                 s1 = ((areaAcoCalc2 * 0.9 * alturaUtilViga * fywd * (Math.cos(tetha) / Math.sin(tetha))) / vsw2) 
                 console.log("resposta: ", s1 * 100)
+                return [{"O espaçamento entre estribos é:" : (s1 * 100).toFixed(2) + " cm"}]
 
             }
             else{
-                console.log("A condicao não foi suprida, vsd > vrd2ii")
+                warnningtrans(document.getElementsByClassName("divsCalculos")[3], "A condicao não foi suprida, vsd > vrd2")
+                
                 console.log("Recomenda-se: ")
                 console.log("1- Alterar a concepção da estrutura, reduzindo os esforços cortantes do elemento em questão;")
                 console.log("2- Aumentar as dimensões da seção, para aumentar a resistência do elemento ao esforço cortante;")
                 console.log("3- Em casos especiais, elevar a resistência do concreto utilizando uma classe com fck superior;")
+                return []
             }
 
 
         }else{
             console.log("O angulo é de 30 a 45")
+            return []
         }
         
         
@@ -106,7 +113,7 @@ function calculoDaArmaduraTransversal(
 
 
 btnCalcTransversal.onclick = function (){
-    calculoDaArmaduraTransversal(
+    var valor = calculoDaArmaduraTransversal(
         parseFloat(classeMaeEntradasTransversal[0].value), 
         parseFloat(classeMaeEntradasTransversal[1].value),
         parseFloat(classeMaeEntradasTransversal[2].value),
@@ -119,6 +126,10 @@ btnCalcTransversal.onclick = function (){
         parseFloat(classeMaeEntradasTransversal[7].value),
         parseFloat(classeMaeEntradasTransversal[8].value)
     )
+
+    resultados(document.getElementsByClassName("divsCalculos")[3], valor)
+
+
 }
 
 document.getElementById("btnLimpaArmTrnasversal").onclick = function(){
