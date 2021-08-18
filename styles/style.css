@@ -380,7 +380,11 @@ hr {
     height: 250px;
     width: 100%;
     
-}
+}.containerImgResp:hover {
+    transform: scale(2); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+    box-shadow: rgb(138, 138, 138) 0px 2px 3px;
+  }
+  
 
 .imgResult{
     max-width: 100%;
@@ -392,6 +396,9 @@ hr {
 
 
 @media screen and (max-width: 595px) {
+    .containerImgResp:hover {
+        transform: scale(1); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+      }
     .alinamentoInputs {
         
         padding: 2%;
