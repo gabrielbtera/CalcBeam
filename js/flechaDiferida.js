@@ -186,7 +186,7 @@ btnFlechaDiferida.onclick = function(){
         )
 
 
-    resultados(document.getElementsByClassName("divsCalculos")[2], mainValor)
+    resultados(document.getElementsByClassName("divsCalculos")[2], mainValor, false,'imagens/viga/FlechaDiferida.jpg')
     
 
 }

@@ -89,7 +89,7 @@ btnDenteGerber.onclick = function(){
         parseFloat(classeMaeEntradasDenteGerber[10].value), // cargaHorizontalC
         parseFloat(classeMaeEntradasDenteGerber[11].value)  // dimensaoE
     )
-    resultados(document.getElementsByClassName("divsCalculos")[4], valor)
+    resultados(document.getElementsByClassName("divsCalculos")[4], valor, false, 'imagens/viga/Gerber.jpg');
 
     
     

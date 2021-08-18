@@ -127,7 +127,7 @@ btnCalcTransversal.onclick = function (){
         parseFloat(classeMaeEntradasTransversal[8].value)
     )
 
-    resultados(document.getElementsByClassName("divsCalculos")[3], valor)
+    resultados(document.getElementsByClassName("divsCalculos")[3], valor, false, 'imagens/viga/Trans.jpg')
 
 
 }
