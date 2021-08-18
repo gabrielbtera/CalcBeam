@@ -360,11 +360,10 @@ hr {
     width: 150px;
     height: 30px;
     font-size: 13px;
-   
     color: #fff;
     border-radius: 5px;
     box-shadow: rgb(138, 138, 138) 0px 2px 3px;
-    margin: 20px;
+    margin: 5px;
 }.botaoEq:hover{
     background-color: #005fcc;
 }.botaoEq:active {
@@ -386,6 +385,9 @@ hr {
         flex-direction: column;
     }.resultadoCalculoLong {
         border-top: 1px solid #0055B8;
+    }
+    .botaoEq,.botaoFigs{
+        width: 120px;
     }
     
     
