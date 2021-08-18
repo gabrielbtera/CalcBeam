@@ -372,7 +372,24 @@ hr {
     background-color: #006ae4;
 }.botaoFigs:active{
     background-color: #004594;
+}.containerImgResp {
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 250px;
+    width: 100%;
+    
 }
+
+.imgResult{
+    max-width: 100%;
+    max-height: 100%;
+    
+
+}
+
+
 
 @media screen and (max-width: 595px) {
     .alinamentoInputs {

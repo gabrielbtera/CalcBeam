@@ -43,7 +43,7 @@ function calculoDaArmlongitudinal(
 
     if(mdLimite >= md){
         areaDeAcoPost = md/((alturaUtilDaviga - 0.4 * x1) * fyd)
-        
+        resultados(document.getElementsByClassName("divsCalculos")[0], [{"A área de aço da armadura de tração é:" : areaDeAcoPost.toFixed(casasLong) + " cm²"}], false, 'imagens/viga/Simples.jpg')
         return [{"A área de aço da armadura positiva é:" : areaDeAcoPost.toFixed(casasLong) + " cm²"}]
 
     }if(mdLimite < md){
@@ -60,7 +60,9 @@ function calculoDaArmlongitudinal(
             As1 = mdLimite / ((alturaUtilDaviga - 0.4 * x2) * fyd)
             areaDeAcoPost = m2 / ((alturaUtilDaviga - dlinha) * fyd)
             areaTotal = As1 + areaDeAcoPost
-            return [{"A área de aço da armadura negativa é:": areaDeAcoPost.toFixed(casasLong) + " cm²"},{"A área de aço total da armadura é:" :  areaTotal.toFixed(casasLong) + " cm²"}]
+            let result = [{"A área de aço da armadura de compressão é:": areaDeAcoPost.toFixed(casasLong) + " cm²"},{"A área de aço total da armadura é:" :  areaTotal.toFixed(casasLong) + " cm²"}]
+            resultados(document.getElementsByClassName("divsCalculos")[0], result, false, 'imagens/viga/Dupla.jpg')
+            return result
         }
         
         
@@ -87,7 +89,7 @@ btnArmLong.onclick = function (){
     )
     
     console.log(valor)
-    resultados(document.getElementsByClassName("divsCalculos")[0], valor)
+    
 }
 
 // Limpa campos

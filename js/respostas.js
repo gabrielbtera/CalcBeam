@@ -1,6 +1,4 @@
-
-
-export function resultados(elemento, respostas, flag = false){
+export function resultados(elemento, respostas, flag = false, dir = ""){
     
     
     var divResultado = document.createElement('div');
@@ -9,9 +7,18 @@ export function resultados(elemento, respostas, flag = false){
 
     var titutoResp = document.createElement('p');
     titutoResp.setAttribute('class', 'titutoResp');
-    titutoResp.innerHTML = "Resposta obtida:"
+    titutoResp.innerHTML = "Resposta obtida:";
 
-    divResultado.appendChild(titutoResp)
+    divResultado.appendChild(titutoResp);
+
+    var divImagem = document.createElement('div');
+    divImagem.setAttribute("class", 'containerImgResp');
+
+    var imagem = document.createElement('img');
+    imagem.setAttribute("class", "imgResult");
+    imagem.setAttribute("src" , dir);
+    
+    divImagem.appendChild(imagem);
 
     
     for (let i =0 ; i < respostas.length ; i ++){
@@ -44,6 +51,9 @@ export function resultados(elemento, respostas, flag = false){
     
     divBotoes.appendChild(botaoEq)
     divBotoes.appendChild(botaoFigs)
+
+    divResultado.appendChild(divImagem)
+
     divResultado.appendChild(divBotoes)
 
     
@@ -64,6 +74,7 @@ export function resultados(elemento, respostas, flag = false){
         elemento.removeChild(elemento.children[1])
         elemento.appendChild(linha);
         elemento.appendChild(divResultado);
+        
        
     }
     window.scrollTo(0, 1000);
