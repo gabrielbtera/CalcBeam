@@ -50,7 +50,7 @@ export function resultados(elemento, respostas, flag = false, dir = "", numero=0
 
     botaoEq.onclick = function(){
         listarExtra(flag, dirEq, 5, 'extraCalcArmLong')
-        window.scrollTo(0, 500);
+        window.scrollTo(0, 1000);
 
     }
 
