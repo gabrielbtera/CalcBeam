@@ -381,38 +381,83 @@ hr {
     width: 100%;
     
 }.containerImgResp:hover {
-    transform: scale(2); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+    transform: scale(1.5); 
     box-shadow: rgb(138, 138, 138) 0px 2px 3px;
-  }
   
+}
 
 .imgResult{
     max-width: 100%;
     max-height: 100%;
     
 
-}
+}.ListaImagensOpc{
+    max-width: 55rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    
 
+}.containerImgRespVarias {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 400px;
+    margin: 5px;
+    
+    
+    
+    
+    
+    
+  }.containerImgRespVarias:hover{
+      transform: scale(1.2);
+  }
+
+
+  @media screen and (max-width: 730px) {
+    .containerImgRespVarias {
+        height: 300px;
+        
+    }
+  }
 
 
 @media screen and (max-width: 595px) {
     .containerImgResp:hover {
-        transform: scale(1); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
-      }
+        transform: scale(1); 
+      } 
     .alinamentoInputs {
-        
         padding: 2%;
         
-    }.labelMenu {
+    }
+    .labelMenu {
         font-size: 0.7rem;
-    }.divsCalculos {
+    }
+    .divsCalculos {
         flex-direction: column;
-    }.resultadoCalculoLong {
+    }
+    .resultadoCalculoLong {
         border-top: 1px solid #0055B8;
     }
     .botaoEq,.botaoFigs{
         width: 120px;
     }
+    .ListaImagensOpc{
+        flex-direction: column;
+        margin: 5px;
+        flex-wrap: unset;
+    }
+    .containerImgRespVarias {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 400px;
+        width: 100%;
+        margin: 5px;
+        
+      }
     
     
 }
@@ -458,5 +503,13 @@ hr {
         font-weight: bold;
         font-size: 20px;
         
+    }.containerImgRespVarias {
+        margin: 3px;
+        height: 300px;
+        width: 100%;
+    }
+    .ListaImagensOpc{
+        flex-direction: column;
+        margin: 5px;
     }
 }

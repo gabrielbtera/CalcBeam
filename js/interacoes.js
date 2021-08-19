@@ -43,10 +43,12 @@ var divMArcacao = document.getElementsByClassName("alinamentoInputs");
 
 function limparChecksNavBar(indice){
     const listaTlea = [teste, telaFlechaI,telaflechaD, telaArmTranversal, telaDenteGerber ];
+    const listaExtra = [document.getElementById('extraCalcArmLong'), undefined, undefined, undefined, undefined]
     const listaCheck = [checar, checkFlechaI, checkFlechaD, checkArmTranversal, checkDenteGerber]
 
 
     for(let i =0; i<listaTlea.length; i++){
+        
         listaTlea[i].style.display = 'none'
         divMArcacao[i].style.backgroundColor = "#0055b8"
         if (i!= indice){

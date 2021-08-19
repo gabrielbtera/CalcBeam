@@ -1,5 +1,6 @@
 import { limparCampos } from "./botaoLimpar.js"
 import {resultados} from "./respostas.js"
+import {listarExtra} from './equacoes.js'
 
 var classeMaeEntradas = document.getElementById('calculoDaArmlong').children[0].children[1].getElementsByClassName('entradas')
 
@@ -43,7 +44,16 @@ function calculoDaArmlongitudinal(
 
     if(mdLimite >= md){
         areaDeAcoPost = md/((alturaUtilDaviga - 0.4 * x1) * fyd)
-        resultados(document.getElementsByClassName("divsCalculos")[0], [{"A área de aço da armadura de tração é:" : areaDeAcoPost.toFixed(casasLong) + " cm²"}], false, 'imagens/viga/Simples.jpg')
+
+        resultados(document.getElementsByClassName("divsCalculos")[0], 
+                    [{"A área de aço da armadura de tração é:" : areaDeAcoPost.toFixed(casasLong) + " cm²"}], 
+                    document.getElementsByClassName('container')[0], 
+                    'imagens/viga/Simples.jpg', 
+                    5,
+                    'extraCalcArmLong',
+                    'imagens/equacoes/armlong', false
+        )
+
         return [{"A área de aço da armadura positiva é:" : areaDeAcoPost.toFixed(casasLong) + " cm²"}]
 
     }if(mdLimite < md){
@@ -101,5 +111,13 @@ document.getElementById("btnLimpaArmLong").onclick = function(){
 }
 
 
+// console.log(document.getElementsByClassName('botaoEq')[0])
+// //if (document.getElementsByClassName('botaoEq')[0] != null){
+//     document.getElementsByClassName('botaoEq')[0].onclick = function (){
+//         console.log("eita")
+//         listarExtra(,"imagens/equacoes/armlong", 5, 'extraCalcArmLong')
 
 
+//     }
+    
+// //}

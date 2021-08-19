@@ -1,6 +1,8 @@
-export function resultados(elemento, respostas, flag = false, dir = ""){
+import { listarExtra } from "./equacoes.js";
+
+export function resultados(elemento, respostas, flag = false, dir = "", numero=0, id = "extra", dirEq = false, DirArm = false){
     
-    
+
     var divResultado = document.createElement('div');
     divResultado.setAttribute('class', 'resultadoCalculoLong');
 
@@ -11,6 +13,7 @@ export function resultados(elemento, respostas, flag = false, dir = ""){
 
     divResultado.appendChild(titutoResp);
 
+    // Cria div imagem respostas
     var divImagem = document.createElement('div');
     divImagem.setAttribute("class", 'containerImgResp');
 
@@ -36,13 +39,20 @@ export function resultados(elemento, respostas, flag = false, dir = ""){
         divResultado.appendChild(valorResp)
     }
     
+
+    // Botoes opcoes
     var divBotoes = document.createElement('div');
     divBotoes.setAttribute('class', 'botoesResposta');
     
-
     var botaoEq = document.createElement('a');
     botaoEq.setAttribute('class', 'botaoEq');
     botaoEq.innerHTML = 'Equações';
+
+    botaoEq.onclick = function(){
+        listarExtra(flag, dirEq, 5, 'extraCalcArmLong')
+        window.scrollTo(0, 500);
+
+    }
 
     var botaoFigs = document.createElement('div');
     botaoFigs.setAttribute('class', 'botaoFigs' );
@@ -57,7 +67,7 @@ export function resultados(elemento, respostas, flag = false, dir = ""){
     divResultado.appendChild(divBotoes)
 
     
-    
+    // adicao na head do elemtnto
     var linha = document.createElement('hr');
     if(respostas.length === 0){
         console.log("nenhum elemento")
@@ -77,7 +87,7 @@ export function resultados(elemento, respostas, flag = false, dir = ""){
         
        
     }
-    window.scrollTo(0, 1000);
+    window.scrollTo(0, 1200);
     
 
 }
@@ -137,6 +147,8 @@ export function warnningtrans(elemento , muda){
         elemento.appendChild(divResultado);
        
     }
+
+    elemento.appendChild(listar(flag, 5))
     window.scrollTo(0, 1000);
     
 
