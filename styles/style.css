@@ -352,7 +352,7 @@ hr {
     
     
 }
-.botaoEq,.botaoFigs{
+.botaoEq,.botaoFigs, .fecharEqImg{
     background-color:#0055B8;
     display: flex;
     align-items: center;
@@ -372,7 +372,14 @@ hr {
     background-color: #006ae4;
 }.botaoFigs:active{
     background-color: #004594;
-}.containerImgResp {
+}
+.fecharEqImg{
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+
+.containerImgResp {
     
     display: flex;
     align-items: center;
@@ -380,7 +387,7 @@ hr {
     height: 250px;
     width: 100%;
     
-}.containerImgResp:hover {
+}.containerImgResp:active {
     transform: scale(1.5); 
     box-shadow: rgb(138, 138, 138) 0px 2px 3px;
   
@@ -411,10 +418,16 @@ hr {
     
     
     
-  }.containerImgRespVarias:hover{
-      transform: scale(1.2);
+  }.containerImgRespVarias:active{
+      transform: scale(1.1);
       box-shadow: rgb(138, 138, 138) 0px 2px 3px;
-  }
+  }.portaImg{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    
+}
 
 
   @media screen and (max-width: 730px) {
@@ -426,8 +439,8 @@ hr {
 
 
 @media screen and (max-width: 595px) {
-    .containerImgResp:hover {
-        transform: scale(1); 
+    .containerImgResp:active {
+        transform: none; 
       } 
     .alinamentoInputs {
         padding: 2%;
@@ -459,6 +472,11 @@ hr {
         margin: 5px;
         
       }
+    .containerImgRespVarias:active{
+    transform: none;
+    box-shadow: none;
+    }
+    
     
     
 }

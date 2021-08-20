@@ -145,7 +145,14 @@ btnflechaI.onclick = function(){
         document.getElementById('armDuplaImediata').checked
     )
 
-    resultados(document.getElementsByClassName("divsCalculos")[1], valor, false, "imagens/viga/FlechaImediata.jpg")
+    resultados(document.getElementsByClassName("divsCalculos")[1], 
+                    valor, 
+                    document.getElementsByClassName('container')[0], 
+                    'imagens/viga/FlechaImediata.jpg', 
+                    6,
+                    'extraCalcflechaImediata',
+                    'imagens/equacoes/FlechaImediata', "imagens/viga/"
+        )
     
 }
 

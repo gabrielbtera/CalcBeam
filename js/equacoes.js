@@ -1,24 +1,20 @@
 
 
 export function listarExtra(elemento, diretorio, numero, id = 'extraCalc""'){
+    
 
-    let divsCalculos = document.createElement('div')
+    var divsCalculos = document.createElement('div')
     divsCalculos.setAttribute('class', 'divsCalculos')
     divsCalculos.setAttribute('id', id)
-
-    console.log("eita")
-
-    
 
     var fechar = document.createElement('a');
     fechar.setAttribute('class', 'fecharEqImg');
     fechar.innerHTML = 'Fechar';
 
-    
-    let imgtotal = document.createElement("div")
+    var imgtotal = document.createElement("div")
     imgtotal.setAttribute('class', 'ListaImagensOpc')
     for (let i = 1; i <= numero; i++){
-        console.log("teste")
+        
         let divListaImg = document.createElement("div")
         divListaImg.setAttribute("class", "containerImgRespVarias")
         let imagem = document.createElement('img')
@@ -27,15 +23,33 @@ export function listarExtra(elemento, diretorio, numero, id = 'extraCalc""'){
         divListaImg.appendChild(imagem)
         imgtotal.appendChild(divListaImg)
             
-        
     }
-    divsCalculos.appendChild(imgtotal)
 
-    divsCalculos.appendChild(fechar)
+    var referencia = document.createElement("div");
+    referencia.setAttribute("class", "portaImg");
 
+    referencia.appendChild(fechar);
+    referencia.appendChild(imgtotal);
     
+
+
+    divsCalculos.appendChild(referencia)
+
     divsCalculos.setAttribute('style', 'display : flex')
-    elemento.appendChild(divsCalculos)
+
+    if (elemento.children.length <= 15){
+        elemento.appendChild(divsCalculos)
+
+    }else {
+
+        elemento.removeChild(elemento.children[15])
+        elemento.appendChild(divsCalculos)
+    }
+
+    fechar.onclick = function(){
+        elemento.removeChild(elemento.children[15])
+    }
+    
 
     
 }

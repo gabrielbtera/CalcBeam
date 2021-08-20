@@ -186,7 +186,25 @@ btnFlechaDiferida.onclick = function(){
         )
 
 
-    resultados(document.getElementsByClassName("divsCalculos")[2], mainValor, false,'imagens/viga/FlechaDiferida.jpg')
+    
+
+//     resultados(document.getElementsByClassName("divsCalculos")[2], 
+//     mainValor, 
+//     document.getElementsByClassName('container')[0], 
+//     'imagens/viga/FlechaDiferida.jpg', 
+//     3,
+//     'extraCalcflechaDiferida',
+//     'imagens/equacoes/FlechaDiferida', false
+// )
+    resultados( document.getElementsByClassName("divsCalculos")[2], 
+                mainValor, 
+                document.getElementsByClassName('container')[0], 
+                'imagens/viga/FlechaDiferida.jpg', 
+                4,
+                'extraCalcflechaImediata',
+                'imagens/equacoes/FlechaDiferida', "imagens/viga/"
+    )
+
     
 
 }

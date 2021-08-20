@@ -49,14 +49,21 @@ export function resultados(elemento, respostas, flag = false, dir = "", numero=0
     botaoEq.innerHTML = 'Equações';
 
     botaoEq.onclick = function(){
-        listarExtra(flag, dirEq, 5, 'extraCalcArmLong')
-        window.scrollTo(0, 1000);
+        listarExtra(flag, dirEq, numero, id)
+        setTimeout(function () {if (window.innerWidth >= 596){window.scrollTo(0, 500)}else{window.scrollTo(0, 1000)}}, 100)
+        
 
     }
+    
 
     var botaoFigs = document.createElement('div');
     botaoFigs.setAttribute('class', 'botaoFigs' );
     botaoFigs.innerHTML = 'Armaduras'
+
+    botaoFigs.onclick = function(){
+        listarExtra(flag, DirArm, 3, id)
+        setTimeout(function () {if (window.innerWidth >= 596){window.scrollTo(0, 500)}else{window.scrollTo(0, 1000)}}, 100)
+    }
 
     
     divBotoes.appendChild(botaoEq)
@@ -87,7 +94,8 @@ export function resultados(elemento, respostas, flag = false, dir = "", numero=0
         
        
     }
-    window.scrollTo(0, 1200);
+    window.innerWidth <= 596 ?window.scrollTo(0, 1000) : window.scrollTo(0, 0)
+    
     
 
 }

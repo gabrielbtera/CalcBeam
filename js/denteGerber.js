@@ -53,25 +53,22 @@ function calcularDenteGerber(lista, resistenciaConcreto,
     let listaSaida = []
     // Dá a resposta dos valores
     if (sigma <= fcdr){
-        console.log("A largura do aparelho é satisfatória.")
+        
         AsTirante = Rsd / fyd
         AsCostura = AsTirante / 2
         AsSuspensao = cargaCalculo / fyd
 
-        listaSaida = [{"Área de aço da armadura do tirante: ": AsTirante},
-            {"Área de aço da armadura de Costura: ": AsCostura},
-            {"Área de aço da armadura de Suspensão: ": AsSuspensao}]
+        listaSaida = [{"Área de aço da armadura do tirante: ": AsTirante.toFixed(2) + ' cm²'},
+            {"Área de aço da armadura de Costura: ": AsCostura.toFixed(2) + ' cm²'},
+            {"Área de aço da armadura de Suspensão: ": AsSuspensao.toFixed(2) + ' cm²'}]
 
 
-        console.log("Armadura do tirante: ",AsTirante)
-        console.log("Armadura de Costura: ", AsCostura)
-        console.log("Armadura de Suspensão: ", AsSuspensao)
+       
 
     }else{
 
         warnninggerber(document.getElementsByClassName("divsCalculos")[4], "A largura do aparelho não satisfaz.","Recomenda-se uma resvisão dos valores.")
-        console.log("A largura do aparelho não satisfaz.")
-        console.log("Recomenda-se uma resvisão dos valores.")
+        
         listaSaida = []
 
     }
@@ -89,7 +86,14 @@ btnDenteGerber.onclick = function(){
         parseFloat(classeMaeEntradasDenteGerber[10].value), // cargaHorizontalC
         parseFloat(classeMaeEntradasDenteGerber[11].value)  // dimensaoE
     )
-    resultados(document.getElementsByClassName("divsCalculos")[4], valor, false, 'imagens/viga/Gerber.jpg');
+    resultados(document.getElementsByClassName("divsCalculos")[4], 
+                    valor, 
+                    document.getElementsByClassName('container')[0], 
+                    'imagens/viga/Gerber.jpg', 
+                    6,
+                    'extraCalctransversal',
+                    'imagens/equacoes/gerber', "imagens/viga/"
+        )
 
     
     

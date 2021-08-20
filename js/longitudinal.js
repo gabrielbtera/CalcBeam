@@ -51,7 +51,7 @@ function calculoDaArmlongitudinal(
                     'imagens/viga/Simples.jpg', 
                     5,
                     'extraCalcArmLong',
-                    'imagens/equacoes/armlong', false
+                    'imagens/equacoes/armlong', "imagens/viga/"
         )
 
         return [{"A área de aço da armadura positiva é:" : areaDeAcoPost.toFixed(casasLong) + " cm²"}]
@@ -71,7 +71,14 @@ function calculoDaArmlongitudinal(
             areaDeAcoPost = m2 / ((alturaUtilDaviga - dlinha) * fyd)
             areaTotal = As1 + areaDeAcoPost
             let result = [{"A área de aço da armadura de compressão é:": areaDeAcoPost.toFixed(casasLong) + " cm²"},{"A área de aço total da armadura é:" :  areaTotal.toFixed(casasLong) + " cm²"}]
-            resultados(document.getElementsByClassName("divsCalculos")[0], result, false, 'imagens/viga/Dupla.jpg')
+            resultados(document.getElementsByClassName("divsCalculos")[0], 
+                    result, 
+                    document.getElementsByClassName('container')[0], 
+                    'imagens/viga/Simples.jpg', 
+                    5,
+                    'extraCalcArmLong',
+                    'imagens/equacoes/armlong', "imagens/viga/"
+        )
             return result
         }
         

@@ -129,6 +129,15 @@ btnCalcTransversal.onclick = function (){
 
     resultados(document.getElementsByClassName("divsCalculos")[3], valor, false, 'imagens/viga/Trans.jpg')
 
+    resultados(document.getElementsByClassName("divsCalculos")[3], 
+                    valor, 
+                    document.getElementsByClassName('container')[0], 
+                    'imagens/viga/Trans.jpg', 
+                    3,
+                    'extraCalctransversal',
+                    'imagens/equacoes/transversal', "imagens/viga/"
+        )
+
 
 }
 
