@@ -41,13 +41,13 @@ export function listarExtra(elemento, diretorio, numero, id = 'extraCalc""'){
         elemento.appendChild(divsCalculos)
 
     }else {
-
+        console.log(elemento.children)
         elemento.removeChild(elemento.children[15])
         elemento.appendChild(divsCalculos)
     }
 
     fechar.onclick = function(){
-        elemento.removeChild(elemento.children[15])
+        elemento.removeChild(document.getElementsByClassName('divsCalculos')[5])
     }
     
 
