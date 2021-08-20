@@ -37,12 +37,12 @@ export function listarExtra(elemento, diretorio, numero, id = 'extraCalc""'){
 
     divsCalculos.setAttribute('style', 'display : flex')
 
-    if (elemento.children.length <= 15){
+    if (document.getElementsByClassName('divsCalculos').length < 6){
         elemento.appendChild(divsCalculos)
 
     }else {
         console.log(elemento.children)
-        elemento.removeChild(elemento.children[15])
+        elemento.removeChild(document.getElementsByClassName('divsCalculos')[5])
         elemento.appendChild(divsCalculos)
     }
 
