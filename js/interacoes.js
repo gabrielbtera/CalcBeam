@@ -46,6 +46,9 @@ function limparChecksNavBar(indice){
     const listaExtra = [document.getElementById('extraCalcArmLong'), undefined, undefined, undefined, undefined]
     const listaCheck = [checar, checkFlechaI, checkFlechaD, checkArmTranversal, checkDenteGerber]
 
+    if (document.getElementsByClassName('divsCalculos').length === 6){
+        document.getElementsByClassName('divsCalculos')[5].style.display = "none"
+    }
 
     for(let i =0; i<listaTlea.length; i++){
         
