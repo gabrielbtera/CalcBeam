@@ -28,7 +28,7 @@ export function verificaCampos(entradas, checks = false, slider = false, diferid
             flag = true
         }
 
-    }if (diferidaFlag === 'gerber'){
+    }else if (diferidaFlag === 'gerber'){
         for (let i = 0; i < entradas.length - 2; i++){
             
             if (entradas[i].value === "" &&   window.getComputedStyle(entradas[i]).display === "block"){  
@@ -42,6 +42,7 @@ export function verificaCampos(entradas, checks = false, slider = false, diferid
     
         }
     }else{
+       
         for (let i = 0; i < entradas.length; i++){
             if (entradas[i].value === "" &&  window.getComputedStyle(entradas[i]).display === "block"){  
                 entradas[i].style.backgroundColor = "#ffdddd"
@@ -69,7 +70,7 @@ export function verificaCampos(entradas, checks = false, slider = false, diferid
 
     let flag3 = false
     if(slider != false){
-        console.log(typeof slider)
+        
         if (slider.options[slider.selectedIndex].value === "semAgregado") {
             alert("INSIRA UM TEMPO EM MÊS.")
             slider.style.backgroundColor = "#ffffdd"
@@ -82,7 +83,7 @@ export function verificaCampos(entradas, checks = false, slider = false, diferid
 
     }
 
-    console.log()
+   
 
     if(flag2){
         alert("Selecione ao menos uma das caixinhas.")
