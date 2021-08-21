@@ -2,6 +2,8 @@ import { listarExtra } from "./equacoes.js";
 
 export function resultados(elemento, respostas, flag = false, dir = "", numero=0, id = "extra", dirEq = false, DirArm = false){
     
+    // Esta funcao exibe as respostas de todas as funcionalidades bem como as imagens das equações 
+    // e armaduras.
 
     var divResultado = document.createElement('div');
     divResultado.setAttribute('class', 'resultadoCalculoLong');
@@ -101,6 +103,7 @@ export function resultados(elemento, respostas, flag = false, dir = "", numero=0
 }
 
 export function warnningtrans(elemento , muda){
+    // Esta funcao exibe um aviso no campo resposta da armadura longitudinal
 
     var divResultado = document.createElement('div');
     divResultado.setAttribute('class', 'resultadoCalculoLong');
@@ -165,6 +168,9 @@ export function warnningtrans(elemento , muda){
 }
 
 export function warnninggerber(elemento, msg1, msg2){
+
+    // Esta funcao faz um aviso na funcionalidade dente gerber.
+
     var divResultado = document.createElement('div');
     divResultado.setAttribute('class', 'resultadoCalculoLong');
 

@@ -1,8 +1,6 @@
 export function limparCampos( listaCampos, diferida = false, exibicaoDiferida = false) {
     
-    // campos de armazenamento da flecha diferida são:
-    // diferida = [cargaxtempo, somacarga, guardaValor, guardaValor2]
-    // 
+    // Esta funcao limpa todos os campos setados e retira as respostas
 
 
 

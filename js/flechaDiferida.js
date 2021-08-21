@@ -1,5 +1,6 @@
 import { limparCampos, limpaSeletor } from "./botaoLimpar.js"
 import {resultados} from "./respostas.js"
+import {verificaCampos} from "./verificaCampos.js"
 
 var classeMaeEntradasDiferida = document.getElementById('calculoDaFlechaDiferida').children[0].children[1].getElementsByClassName('entradas')
 
@@ -43,12 +44,13 @@ function calculoDaFlechaDiferida(
     
     // VERIFICA SE O TEMPO FOI ADICIONADO
     if (isNaN(tempoParcelaCarga)){
-        document.getElementById("avisoValores").innerHTML = "Por favor, clique em adicionar valores"
+        document.getElementById("avisoValores").innerHTML = "Adicione o TEMPO de aplicacao da parcela de carga."
         document.getElementsByClassName('warnning')[0].style.display = "flex"
         document.getElementById("avisoValores").style.color = '#ff0000'
+        classeMaeEntradasDiferida[5].style.backgroundColor = "#ffdddd"
         return false
     }else{
-
+        classeMaeEntradasDiferida[5].style.backgroundColor = "#ecf5ff"
         t0i = tempoParcelaCarga
         t0i = t0i / 30
 
@@ -60,7 +62,7 @@ function calculoDaFlechaDiferida(
             cargaxtempo.value = somatorio1
             cargaxtempo.innerHTML = somatorio1.toFixed(3)
         }else{
-            console.log('caraga tempo',cargaxtempo.value)
+            
             auxiliar = parseFloat(cargaxtempo.value) + somatorio1
             cargaxtempo.value = auxiliar
             cargaxtempo.innerHTML = auxiliar.toFixed(3)
@@ -74,7 +76,7 @@ function calculoDaFlechaDiferida(
             somacarga.value = pc
             somacarga.innerHTML = pc.toFixed(3)
         }else{
-            console.log("soma carga",typeof somacarga.value)
+            
             auxiliar = pc + parseFloat(somacarga.value)
             somacarga.value = auxiliar
 
@@ -100,13 +102,16 @@ function mainFlechaDiferida(flechaImediata, seletor,condicaoArmsimples,
 
     // Esta função é o main da flecha diferida, ela será chamada no onclick do botão calcular
     
-    console.log(flagVerificaTempo.value, parseFloat( tempoParcelaCarga))
+    
 
     // Verifica o  proximo valor do tempo se o valor foi adicionado ou não.
     if (parseFloat(flagVerificaTempo.value) != parseFloat(tempoParcelaCarga) && !isNaN(parseFloat(tempoParcelaCarga))){
 
          // Exibe o aviso de dados que não foram dicionados
+        
         document.getElementById("avisoValores").innerHTML = "Por favor, clique em adicionar valores"
+        
+        
         document.getElementsByClassName('warnning')[0].style.display = "flex"
         document.getElementById("avisoValores").style.color = '#ff0000'
 
@@ -129,7 +134,7 @@ function mainFlechaDiferida(flechaImediata, seletor,condicaoArmsimples,
         ft = flechaImediata * (1 + alfaf)
 
         
-        // Verifica se o restorno foi calculado ou não
+        // Verifica se o retorno foi calculado ou não
         if (isNaN(fd) || isNaN(ft) == NaN){
             document.getElementById("avisoValores").innerHTML = "Por favor, clique em adicionar valores"
             document.getElementsByClassName('warnning')[0].style.display = "flex"
@@ -146,57 +151,51 @@ function mainFlechaDiferida(flechaImediata, seletor,condicaoArmsimples,
 
 
 btnInsereDiferida.onclick = function(){
+    if (! verificaCampos(classeMaeEntradasDiferida, document.getElementById('calculoDaFlechaDiferida').children[0].children[1].getElementsByClassName('checksCondicional'), 
+    document.getElementById("seletorGeralInternoDiferida"), "diferida")){
+        var valor = calculoDaFlechaDiferida(
+            document.getElementById('armSimples'),
+            document.getElementById('armDupla'),            
+            parseFloat(classeMaeEntradasDiferida[1].value),  // altura util viga
+            parseFloat(classeMaeEntradasDiferida[2].value), // largura da viga
+            parseFloat(classeMaeEntradasDiferida[3].value), // arm compresão
+            classeMaeEntradasDiferida[4],                   // parcela de carga=
+            parseFloat(classeMaeEntradasDiferida[5].value), // Tempo Parcela de carga
+            document.getElementById('cargaTempo'),          // carga x tempo=
+            document.getElementById('somacarga'),           // soma carga=
+            document.getElementById("guardaValor")
     
+        )
+    
+        
+        classeMaeEntradasDiferida[4].value = "" 
+        classeMaeEntradasDiferida[5].value = ""   
+    }
 
-    var valor = calculoDaFlechaDiferida(
-        document.getElementById('armSimples'),
-        document.getElementById('armDupla'),            
-        parseFloat(classeMaeEntradasDiferida[1].value),  // altura util viga
-        parseFloat(classeMaeEntradasDiferida[2].value), // largura da viga
-        parseFloat(classeMaeEntradasDiferida[3].value), // arm compresão
-        classeMaeEntradasDiferida[4],                   // parcela de carga=
-        parseFloat(classeMaeEntradasDiferida[5].value), // Tempo Parcela de carga
-        document.getElementById('cargaTempo'),          // carga x tempo=
-        document.getElementById('somacarga'),           // soma carga=
-        document.getElementById("guardaValor")
-
-    )
-
-    console.log(valor)
-    classeMaeEntradasDiferida[4].value = "" 
-    classeMaeEntradasDiferida[5].value = ""   
+   
 
     
 }
 
 btnFlechaDiferida.onclick = function(){
-
-    var mainValor = mainFlechaDiferida(
-        parseFloat(classeMaeEntradasDiferida[0].value), // flecha diferida
-        document.getElementById('seletorGeralInternoDiferida'),
-        document.getElementById('armSimples'),
-        document.getElementById('armDupla'),
-        parseFloat(classeMaeEntradasDiferida[3].value), // armCompressao
-        parseFloat(classeMaeEntradasDiferida[5].value), // tmpoParceCarga
-        parseFloat(classeMaeEntradasDiferida[2].value), // largura da viga
-        parseFloat(classeMaeEntradasDiferida[1].value), // altura util da viga
-        document.getElementById('cargaTempo'),          // carga x tempo=
-        document.getElementById('somacarga'),            // soma carga=
-        document.getElementById("guardaValor")
-        )
-
-
-    
-
-//     resultados(document.getElementsByClassName("divsCalculos")[2], 
-//     mainValor, 
-//     document.getElementsByClassName('container')[0], 
-//     'imagens/viga/FlechaDiferida.jpg', 
-//     3,
-//     'extraCalcflechaDiferida',
-//     'imagens/equacoes/FlechaDiferida', false
-// )
-    resultados( document.getElementsByClassName("divsCalculos")[2], 
+    if (! verificaCampos(classeMaeEntradasDiferida, document.getElementById('calculoDaFlechaDiferida').children[0].children[1].getElementsByClassName('checksCondicional'), 
+    document.getElementById("seletorGeralInternoDiferida"), "diferida")){
+        
+        var mainValor = mainFlechaDiferida(
+            parseFloat(classeMaeEntradasDiferida[0].value), // flecha diferida
+            document.getElementById('seletorGeralInternoDiferida'),
+            document.getElementById('armSimples'),
+            document.getElementById('armDupla'),
+            parseFloat(classeMaeEntradasDiferida[3].value), // armCompressao
+            parseFloat(classeMaeEntradasDiferida[5].value), // tmpoParceCarga
+            parseFloat(classeMaeEntradasDiferida[2].value), // largura da viga
+            parseFloat(classeMaeEntradasDiferida[1].value), // altura util da viga
+            document.getElementById('cargaTempo'),          // carga x tempo=
+            document.getElementById('somacarga'),            // soma carga=
+            document.getElementById("guardaValor")
+            )
+            
+            resultados( document.getElementsByClassName("divsCalculos")[2], 
                 mainValor, 
                 document.getElementsByClassName('container')[0], 
                 'imagens/viga/FlechaDiferida.jpg', 
@@ -204,8 +203,7 @@ btnFlechaDiferida.onclick = function(){
                 'extraCalcflechaImediata',
                 'imagens/equacoes/FlechaDiferida', "imagens/viga/"
     )
-
-    
+    }
 
 }
 

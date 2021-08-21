@@ -1,6 +1,7 @@
 import { limparCampos } from "./botaoLimpar.js"
 import {resultados} from "./respostas.js"
 import {listarExtra} from './equacoes.js'
+import { verificaCampos } from "./verificaCampos.js"
 
 var classeMaeEntradas = document.getElementById('calculoDaArmlong').children[0].children[1].getElementsByClassName('entradas')
 
@@ -93,19 +94,24 @@ function calculoDaArmlongitudinal(
 // calcula armadura longitudinal.
 btnArmLong.onclick = function (){
     
-    let valor = calculoDaArmlongitudinal(
-        classeMaeEntradas[0].value,
-        classeMaeEntradas[1].value,
-        classeMaeEntradas[2].value,
-        classeMaeEntradas[3].value,
-        classeMaeEntradas[4].value,
-        classeMaeEntradas[5].value,
-        document.getElementById('dlinha'),
-        classeMaeEntradas[6].value,
-        document.getElementsByClassName("Aviso")[0]
-    )
+    if (! verificaCampos(classeMaeEntradas, document.getElementById('calculoDaArmlong').children[0].children[1].getElementsByClassName('checksCondicional'), false)){
+        let valor = calculoDaArmlongitudinal(
+            classeMaeEntradas[0].value,
+            classeMaeEntradas[1].value,
+            classeMaeEntradas[2].value,
+            classeMaeEntradas[3].value,
+            classeMaeEntradas[4].value,
+            classeMaeEntradas[5].value,
+            document.getElementById('dlinha'),
+            classeMaeEntradas[6].value,
+            document.getElementsByClassName("Aviso")[0]
+        )
+    }
+
+   
     
-    console.log(valor)
+
+    
     
 }
 

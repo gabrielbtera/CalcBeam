@@ -2,6 +2,7 @@
 
 export function listarExtra(elemento, diretorio, numero, id = 'extraCalc""'){
     
+    // Essa funcao arruma as imagens das equacoes e é usada no arquivo respostas.js
 
     var divsCalculos = document.createElement('div')
     divsCalculos.setAttribute('class', 'divsCalculos')
@@ -41,7 +42,7 @@ export function listarExtra(elemento, diretorio, numero, id = 'extraCalc""'){
         elemento.appendChild(divsCalculos)
 
     }else {
-        console.log(elemento.children)
+        
         elemento.removeChild(document.getElementsByClassName('divsCalculos')[5])
         elemento.appendChild(divsCalculos)
     }

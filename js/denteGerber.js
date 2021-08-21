@@ -1,5 +1,6 @@
 import { limparCampos, limpaSeletor } from "./botaoLimpar.js"
 import {resultados, warnninggerber} from "./respostas.js"
+import { verificaCampos } from "./verificaCampos.js"
 
 var classeMaeEntradasDenteGerber = document.getElementById('calculoDenteGerber').children[0].children[1].getElementsByClassName('entradas')
 var btnDenteGerber = document.getElementById("btnDenteGerber")
@@ -78,22 +79,29 @@ function calcularDenteGerber(lista, resistenciaConcreto,
 7
 
 btnDenteGerber.onclick = function(){
-    var valor = calcularDenteGerber(
-        classeMaeEntradasDenteGerber,                      // lista
-        parseFloat(classeMaeEntradasDenteGerber[7].value), // resistenciaConcreto
-        parseFloat(classeMaeEntradasDenteGerber[8].value), // resEcoamentoAco
-        parseFloat(classeMaeEntradasDenteGerber[9].value),  // cargaCalculo
-        parseFloat(classeMaeEntradasDenteGerber[10].value), // cargaHorizontalC
-        parseFloat(classeMaeEntradasDenteGerber[11].value)  // dimensaoE
-    )
-    resultados(document.getElementsByClassName("divsCalculos")[4], 
-                    valor, 
-                    document.getElementsByClassName('container')[0], 
-                    'imagens/viga/Gerber.jpg', 
-                    6,
-                    'extraCalctransversal',
-                    'imagens/equacoes/gerber', "imagens/viga/"
+
+    if (! verificaCampos(classeMaeEntradasDenteGerber,false, 
+    false, "gerber")){
+
+        var valor = calcularDenteGerber(
+            classeMaeEntradasDenteGerber,                      // lista
+            parseFloat(classeMaeEntradasDenteGerber[7].value), // resistenciaConcreto
+            parseFloat(classeMaeEntradasDenteGerber[8].value), // resEcoamentoAco
+            parseFloat(classeMaeEntradasDenteGerber[9].value),  // cargaCalculo
+            parseFloat(classeMaeEntradasDenteGerber[10].value), // cargaHorizontalC
+            parseFloat(classeMaeEntradasDenteGerber[11].value)  // dimensaoE
         )
+        resultados(document.getElementsByClassName("divsCalculos")[4], 
+                        valor, 
+                        document.getElementsByClassName('container')[0], 
+                        'imagens/viga/Gerber.jpg', 
+                        6,
+                        'extraCalctransversal',
+                        'imagens/equacoes/gerber', "imagens/viga/"
+            )
+
+    }
+   
 
     
     

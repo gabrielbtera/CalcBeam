@@ -1,5 +1,6 @@
 import { limparCampos } from "./botaoLimpar.js"
 import {resultados, warnningtrans} from "./respostas.js"
+import { verificaCampos } from "./verificaCampos.js"
 
 var classeMaeEntradasTransversal = document.getElementById('calculoDaArmTrans').children[0].children[1].getElementsByClassName('entradas')
 var btnCalcTransversal = document.getElementById("btnCalcTransversal")
@@ -113,30 +114,39 @@ function calculoDaArmaduraTransversal(
 
 
 btnCalcTransversal.onclick = function (){
-    var valor = calculoDaArmaduraTransversal(
-        parseFloat(classeMaeEntradasTransversal[0].value), 
-        parseFloat(classeMaeEntradasTransversal[1].value),
-        parseFloat(classeMaeEntradasTransversal[2].value),
-        parseFloat(classeMaeEntradasTransversal[3].value),
-        parseFloat(classeMaeEntradasTransversal[4].value),
-        parseFloat(classeMaeEntradasTransversal[5].value),
-        document.getElementById("condModeloCalculo1"),
-        parseFloat(classeMaeEntradasTransversal[6].value),
-        document.getElementById("condModeloCalculo2"),
-        parseFloat(classeMaeEntradasTransversal[7].value),
-        parseFloat(classeMaeEntradasTransversal[8].value)
-    )
 
-    resultados(document.getElementsByClassName("divsCalculos")[3], valor, false, 'imagens/viga/Trans.jpg')
-
-    resultados(document.getElementsByClassName("divsCalculos")[3], 
-                    valor, 
-                    document.getElementsByClassName('container')[0], 
-                    'imagens/viga/Trans.jpg', 
-                    3,
-                    'extraCalctransversal',
-                    'imagens/equacoes/transversal', "imagens/viga/"
+    if (! verificaCampos(classeMaeEntradasTransversal, document.getElementById('calculoDaArmTrans').children[0].children[1].getElementsByClassName('checksCondicional'), 
+    false, "")){
+        
+        var valor = calculoDaArmaduraTransversal(
+            parseFloat(classeMaeEntradasTransversal[0].value), 
+            parseFloat(classeMaeEntradasTransversal[1].value),
+            parseFloat(classeMaeEntradasTransversal[2].value),
+            parseFloat(classeMaeEntradasTransversal[3].value),
+            parseFloat(classeMaeEntradasTransversal[4].value),
+            parseFloat(classeMaeEntradasTransversal[5].value),
+            document.getElementById("condModeloCalculo1"),
+            parseFloat(classeMaeEntradasTransversal[6].value),
+            document.getElementById("condModeloCalculo2"),
+            parseFloat(classeMaeEntradasTransversal[7].value),
+            parseFloat(classeMaeEntradasTransversal[8].value)
         )
+    
+        
+    
+        resultados(document.getElementsByClassName("divsCalculos")[3], 
+                        valor, 
+                        document.getElementsByClassName('container')[0], 
+                        'imagens/viga/Trans.jpg', 
+                        3,
+                        'extraCalctransversal',
+                        'imagens/equacoes/transversal', "imagens/viga/"
+            )
+
+
+    }
+
+   
 
 
 }

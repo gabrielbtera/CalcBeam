@@ -1,5 +1,6 @@
 import { limparCampos, limpaSeletor } from "./botaoLimpar.js"
 import {resultados} from "./respostas.js"
+import {verificaCampos}from "./verificaCampos.js"
 
 var classeMaeEntradasImediata = document.getElementById('calculoDaFlechaImediata').children[0].children[1].getElementsByClassName('entradas')
 
@@ -128,31 +129,33 @@ function calculoFlechaImediata(alturaViga, alturaUtilViga,
 
 
 btnflechaI.onclick = function(){
+    if (! verificaCampos(classeMaeEntradasImediata, document.getElementById('calculoDaFlechaImediata').children[0].children[1].getElementsByClassName('checksCondicional'), false)){
 
-    var valor = calculoFlechaImediata(
-        parseFloat(classeMaeEntradasImediata[0].value),
-        parseFloat(classeMaeEntradasImediata[1].value),
-        parseFloat(classeMaeEntradasImediata[2].value),
-        parseFloat(classeMaeEntradasImediata[3].value),
-        parseFloat(classeMaeEntradasImediata[4].value),
-        parseFloat(classeMaeEntradasImediata[5].value),
-        parseFloat(classeMaeEntradasImediata[6].value),
-        parseFloat(classeMaeEntradasImediata[7].value),
-        parseFloat(classeMaeEntradasImediata[8].value),
-        parseFloat(classeMaeEntradasImediata[9].value),
-        document.getElementById('seletorGeralInterno'),
-        document.getElementById('armSimplesImediata').checked,
-        document.getElementById('armDuplaImediata').checked
-    )
-
-    resultados(document.getElementsByClassName("divsCalculos")[1], 
-                    valor, 
-                    document.getElementsByClassName('container')[0], 
-                    'imagens/viga/FlechaImediata.jpg', 
-                    6,
-                    'extraCalcflechaImediata',
-                    'imagens/equacoes/FlechaImediata', "imagens/viga/"
+        var valor = calculoFlechaImediata(
+            parseFloat(classeMaeEntradasImediata[0].value),
+            parseFloat(classeMaeEntradasImediata[1].value),
+            parseFloat(classeMaeEntradasImediata[2].value),
+            parseFloat(classeMaeEntradasImediata[3].value),
+            parseFloat(classeMaeEntradasImediata[4].value),
+            parseFloat(classeMaeEntradasImediata[5].value),
+            parseFloat(classeMaeEntradasImediata[6].value),
+            parseFloat(classeMaeEntradasImediata[7].value),
+            parseFloat(classeMaeEntradasImediata[8].value),
+            parseFloat(classeMaeEntradasImediata[9].value),
+            document.getElementById('seletorGeralInterno'),
+            document.getElementById('armSimplesImediata').checked,
+            document.getElementById('armDuplaImediata').checked
         )
+
+        resultados(document.getElementsByClassName("divsCalculos")[1], 
+                        valor, 
+                        document.getElementsByClassName('container')[0], 
+                        'imagens/viga/FlechaImediata.jpg', 
+                        6,
+                        'extraCalcflechaImediata',
+                        'imagens/equacoes/FlechaImediata', "imagens/viga/"
+            )
+    }
     
 }
 
