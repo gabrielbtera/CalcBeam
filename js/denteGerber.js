@@ -79,7 +79,14 @@ function calcularDenteGerber(lista, resistenciaConcreto,
 7
 
 btnDenteGerber.onclick = function(){
-
+    const indice = 4
+    if (document.getElementsByClassName("divsCalculos")[indice].children.length > 1){
+        document.getElementsByClassName("divsCalculos")[indice].removeChild(document.getElementsByClassName("divsCalculos")[0].children[1])
+        document.getElementsByClassName("divsCalculos")[indice].removeChild(document.getElementsByClassName("divsCalculos")[0].children[1])
+    }if (document.getElementsByClassName('divsCalculos').length === 6){
+        document.getElementsByClassName('container')[0].removeChild(document.getElementsByClassName('divsCalculos')[5])
+    }
+    
     if (! verificaCampos(classeMaeEntradasDenteGerber,false, 
     false, "gerber")){
 

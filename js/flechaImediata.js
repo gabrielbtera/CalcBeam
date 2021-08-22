@@ -129,7 +129,18 @@ function calculoFlechaImediata(alturaViga, alturaUtilViga,
 
 
 btnflechaI.onclick = function(){
-    if (! verificaCampos(classeMaeEntradasImediata, document.getElementById('calculoDaFlechaImediata').children[0].children[1].getElementsByClassName('checksCondicional'), false)){
+
+    const indice = 1
+    if (document.getElementsByClassName("divsCalculos")[indice].children.length > 1){
+        document.getElementsByClassName("divsCalculos")[indice].removeChild(document.getElementsByClassName("divsCalculos")[indice].children[1])
+        document.getElementsByClassName("divsCalculos")[indice].removeChild(document.getElementsByClassName("divsCalculos")[indice].children[1])
+    }if (document.getElementsByClassName('divsCalculos').length === 6){
+        document.getElementsByClassName('container')[0].removeChild(document.getElementsByClassName('divsCalculos')[5])
+
+
+    }
+   
+    if (! verificaCampos(classeMaeEntradasImediata, document.getElementById('calculoDaFlechaImediata').children[0].children[1].getElementsByClassName('checksCondicional'), false, 'imediata')){
 
         var valor = calculoFlechaImediata(
             parseFloat(classeMaeEntradasImediata[0].value),

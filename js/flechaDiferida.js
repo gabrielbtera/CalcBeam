@@ -151,6 +151,16 @@ function mainFlechaDiferida(flechaImediata, seletor,condicaoArmsimples,
 
 
 btnInsereDiferida.onclick = function(){
+    const indice = 2
+    if (document.getElementsByClassName("divsCalculos")[indice].children.length > 1){
+        document.getElementsByClassName("divsCalculos")[indice].removeChild(document.getElementsByClassName("divsCalculos")[indice].children[1])
+        document.getElementsByClassName("divsCalculos")[indice].removeChild(document.getElementsByClassName("divsCalculos")[indice].children[1])
+    }if (document.getElementsByClassName('divsCalculos').length > 5){
+        
+        document.getElementsByClassName('container')[0].removeChild(document.getElementsByClassName('divsCalculos')[5])
+
+
+    }
     if (! verificaCampos(classeMaeEntradasDiferida, document.getElementById('calculoDaFlechaDiferida').children[0].children[1].getElementsByClassName('checksCondicional'), 
     document.getElementById("seletorGeralInternoDiferida"), "diferida")){
         var valor = calculoDaFlechaDiferida(

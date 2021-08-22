@@ -8,10 +8,18 @@ export function verificaCampos(entradas, checks = false, slider = false, diferid
     let flag = false
 
     if(diferidaFlag === 'diferida'){
+        let aux = 0
+
+        if(window.getComputedStyle(document.getElementById("tresInputs")).display != "flex"){
+            aux =(entradas.length-2) - 3
+        }else{
+            aux =(entradas.length-2)
+        }
+    
         
-        for (let i = 0; i < entradas.length - 2; i++){
+        for (let i = 0; i < aux; i++){
             
-            if (entradas[i].value === "" &&  window.getComputedStyle(document.getElementById("tresInputs")).display === "flex"){  
+            if (entradas[i].value === ""){  
                 entradas[i].style.backgroundColor = "#ffdddd"
                 
                 flag = true
@@ -31,7 +39,7 @@ export function verificaCampos(entradas, checks = false, slider = false, diferid
     }else if (diferidaFlag === 'gerber'){
         for (let i = 0; i < entradas.length - 2; i++){
             
-            if (entradas[i].value === "" &&   window.getComputedStyle(entradas[i]).display === "block"){  
+            if (entradas[i].value === ""){  
                 entradas[i].style.backgroundColor = "#ffdddd"
                 
                 flag = true
@@ -41,9 +49,61 @@ export function verificaCampos(entradas, checks = false, slider = false, diferid
             }
     
         }
-    }else{
+    }else if (diferidaFlag === "imediata"){
+        const ARMADURA_COMPRESSAO = 9
+        let aux = 0
+        if(window.getComputedStyle(document.getElementById("compresao")).display === "flex" && entradas[ARMADURA_COMPRESSAO].value === ""){
+            aux = entradas.length
+        }else{
+            aux = entradas.length - 1
+        }
+
+        for (let i = 0; i < aux; i++){
+            
+            if (entradas[i].value === "" ){
+                entradas[i].style.backgroundColor = "#ffdddd"
+                
+                flag = true
+            }else{
+                entradas[i].style.backgroundColor = "#ecf5ff"
+                
+            }
+    
+        }
+    }else if (diferidaFlag === "transversal"){
+        let aux =  0
+        let verifica = false
+        if (window.getComputedStyle(document.getElementById("condicaocalc1")).display == "flex"){
+            aux = entradas.length - 2
+        }if (window.getComputedStyle(document.getElementById("condicaocalc2")).display == "flex"){
+            verifica = true
+            aux = entradas.length
+        }
+        console.log(entradas[6])
+
+        for (let i = 0; i < aux; i++){
+            if (verifica && i === 6){
+                continue
+            }
+            if (entradas[i].value === "" ){
+                entradas[i].style.backgroundColor = "#ffdddd"
+                
+                flag = true
+            }else{
+                entradas[i].style.backgroundColor = "#ecf5ff"
+                
+            }
+        }
+    
+    
+    }
+
+
+    
+    else{
        
         for (let i = 0; i < entradas.length; i++){
+            console.log(window.getComputedStyle(entradas[i]).display)
             if (entradas[i].value === "" &&  window.getComputedStyle(entradas[i]).display === "block"){  
                 entradas[i].style.backgroundColor = "#ffdddd"
                 flag = true

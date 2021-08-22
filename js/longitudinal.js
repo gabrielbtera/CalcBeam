@@ -93,6 +93,15 @@ function calculoDaArmlongitudinal(
 
 // calcula armadura longitudinal.
 btnArmLong.onclick = function (){
+    if (document.getElementsByClassName("divsCalculos")[0].children.length > 1){
+        document.getElementsByClassName("divsCalculos")[0].removeChild(document.getElementsByClassName("divsCalculos")[0].children[1])
+        document.getElementsByClassName("divsCalculos")[0].removeChild(document.getElementsByClassName("divsCalculos")[0].children[1])
+    }if (document.getElementsByClassName('divsCalculos').length === 6){
+        document.getElementsByClassName('container')[0].removeChild(document.getElementsByClassName('divsCalculos')[5])
+
+
+    }
+   
     
     if (! verificaCampos(classeMaeEntradas, document.getElementById('calculoDaArmlong').children[0].children[1].getElementsByClassName('checksCondicional'), false)){
         let valor = calculoDaArmlongitudinal(

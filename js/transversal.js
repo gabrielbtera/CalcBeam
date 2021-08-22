@@ -114,9 +114,17 @@ function calculoDaArmaduraTransversal(
 
 
 btnCalcTransversal.onclick = function (){
+    const indice = 3
+    if (document.getElementsByClassName("divsCalculos")[indice].children.length > 1){
+        document.getElementsByClassName("divsCalculos")[indice].removeChild(document.getElementsByClassName("divsCalculos")[indice].children[1])
+        document.getElementsByClassName("divsCalculos")[indice].removeChild(document.getElementsByClassName("divsCalculos")[indice].children[1])
+    }if (document.getElementsByClassName('divsCalculos').length === 6){
+        document.getElementsByClassName('container')[0].removeChild(document.getElementsByClassName('divsCalculos')[5])
 
+
+    }
     if (! verificaCampos(classeMaeEntradasTransversal, document.getElementById('calculoDaArmTrans').children[0].children[1].getElementsByClassName('checksCondicional'), 
-    false, "")){
+    false, "transversal")){
         
         var valor = calculoDaArmaduraTransversal(
             parseFloat(classeMaeEntradasTransversal[0].value), 

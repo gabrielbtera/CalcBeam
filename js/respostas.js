@@ -88,7 +88,7 @@ export function resultados(elemento, respostas, flag = false, dir = "", numero=0
         elemento.appendChild(divResultado);
     
     }else{
-        console.log(elemento.children.length)
+        
         elemento.removeChild(elemento.children[1])
         elemento.removeChild(elemento.children[1])
         elemento.appendChild(linha);
