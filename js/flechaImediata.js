@@ -143,16 +143,16 @@ btnflechaI.onclick = function(){
     if (! verificaCampos(classeMaeEntradasImediata, document.getElementById('calculoDaFlechaImediata').children[0].children[1].getElementsByClassName('checksCondicional'), false, 'imediata')){
 
         var valor = calculoFlechaImediata(
-            parseFloat(classeMaeEntradasImediata[0].value),
-            parseFloat(classeMaeEntradasImediata[1].value),
-            parseFloat(classeMaeEntradasImediata[2].value),
-            parseFloat(classeMaeEntradasImediata[3].value),
-            parseFloat(classeMaeEntradasImediata[4].value),
-            parseFloat(classeMaeEntradasImediata[5].value),
-            parseFloat(classeMaeEntradasImediata[6].value),
-            parseFloat(classeMaeEntradasImediata[7].value),
-            parseFloat(classeMaeEntradasImediata[8].value),
-            parseFloat(classeMaeEntradasImediata[9].value),
+            parseFloat(classeMaeEntradasImediata[0].value.replace(',', '.')),
+            parseFloat(classeMaeEntradasImediata[1].value.replace(',', '.')),
+            parseFloat(classeMaeEntradasImediata[2].value.replace(',', '.')),
+            parseFloat(classeMaeEntradasImediata[3].value.replace(',', '.')),
+            parseFloat(classeMaeEntradasImediata[4].value.replace(',', '.')),
+            parseFloat(classeMaeEntradasImediata[5].value.replace(',', '.')),
+            parseFloat(classeMaeEntradasImediata[6].value.replace(',', '.')),
+            parseFloat(classeMaeEntradasImediata[7].value.replace(',', '.')),
+            parseFloat(classeMaeEntradasImediata[8].value.replace(',', '.')),
+            parseFloat(classeMaeEntradasImediata[9].value.replace(',', '.')),
             document.getElementById('seletorGeralInterno'),
             document.getElementById('armSimplesImediata').checked,
             document.getElementById('armDuplaImediata').checked

@@ -6,6 +6,7 @@ export function verificaCampos(entradas, checks = false, slider = false, diferid
     // e faz a verificacao se os campos obrigatórios foram preenchidos
 
     let flag = false
+    let flagLetra = false
 
     if(diferidaFlag === 'diferida'){
         let aux = 0
@@ -23,7 +24,12 @@ export function verificaCampos(entradas, checks = false, slider = false, diferid
                 entradas[i].style.backgroundColor = "#ffdddd"
                 
                 flag = true
-            }else{
+            }else if (isNaN(parseFloat(entradas[i].value))){
+                entradas[i].style.backgroundColor = "#fffddd"
+                flagLetra = true
+
+            }
+            else{
                 entradas[i].style.backgroundColor = "#ecf5ff"
                 
             }
@@ -43,7 +49,12 @@ export function verificaCampos(entradas, checks = false, slider = false, diferid
                 entradas[i].style.backgroundColor = "#ffdddd"
                 
                 flag = true
-            }else{
+            }else if (isNaN(parseFloat(entradas[i].value))){
+                entradas[i].style.backgroundColor = "#fffddd"
+                flagLetra = true
+
+            }
+            else{
                 entradas[i].style.backgroundColor = "#ecf5ff"
                 
             }
@@ -64,7 +75,12 @@ export function verificaCampos(entradas, checks = false, slider = false, diferid
                 entradas[i].style.backgroundColor = "#ffdddd"
                 
                 flag = true
-            }else{
+            }else if (isNaN(parseFloat(entradas[i].value))){
+                entradas[i].style.backgroundColor = "#fffddd"
+                flagLetra = true
+
+            }
+            else{
                 entradas[i].style.backgroundColor = "#ecf5ff"
                 
             }
@@ -89,7 +105,14 @@ export function verificaCampos(entradas, checks = false, slider = false, diferid
                 entradas[i].style.backgroundColor = "#ffdddd"
                 
                 flag = true
-            }else{
+            }else if (isNaN(parseFloat(entradas[i].value))){
+                entradas[i].style.backgroundColor = "#fffddd"
+                
+                flagLetra = true
+
+            }
+            
+            else{
                 entradas[i].style.backgroundColor = "#ecf5ff"
                 
             }
@@ -107,7 +130,12 @@ export function verificaCampos(entradas, checks = false, slider = false, diferid
             if (entradas[i].value === "" &&  window.getComputedStyle(entradas[i]).display === "block"){  
                 entradas[i].style.backgroundColor = "#ffdddd"
                 flag = true
-            }else{
+            }else if (isNaN(parseFloat(entradas[i].value))){
+                entradas[i].style.backgroundColor = "#fffddd"
+                flagLetra = true
+
+            }
+            else{
                 entradas[i].style.backgroundColor = "#ecf5ff"
             }
     
@@ -185,13 +213,24 @@ export function verificaCampos(entradas, checks = false, slider = false, diferid
             confirmButtonText: 'Entendi'
            })
     }
+    else if (flagLetra){
+        Swal.fire({
+            icon: 'error',
+            title: 'Dados inválidos',
+            text: "Os campos amarelados não são números.",
+            showCancelButton: false,
+            confirmButtonColor: '#0055b8',
+            background: "#b7d8ff",
+            confirmButtonText: 'Entendi'
+           })
+    }
 
     
 
 
 
 
-    return flag || flag2 || flag3
+    return flag || flag2 || flag3 || flagLetra
 
 
     

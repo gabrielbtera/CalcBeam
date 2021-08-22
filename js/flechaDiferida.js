@@ -38,7 +38,7 @@ function calculoDaFlechaDiferida(
     if (parcelaCarga.value === ''){
        pc = 1
     }else{
-        pc = parseFloat(parcelaCarga.value)
+        pc = parseFloat(parcelaCarga.value.replace(',', '.'))
     }
 
     
@@ -166,11 +166,11 @@ btnInsereDiferida.onclick = function(){
         var valor = calculoDaFlechaDiferida(
             document.getElementById('armSimples'),
             document.getElementById('armDupla'),            
-            parseFloat(classeMaeEntradasDiferida[1].value),  // altura util viga
-            parseFloat(classeMaeEntradasDiferida[2].value), // largura da viga
-            parseFloat(classeMaeEntradasDiferida[3].value), // arm compresão
+            parseFloat(classeMaeEntradasDiferida[1].value.replace(',', '.')),  // altura util viga
+            parseFloat(classeMaeEntradasDiferida[2].value.replace(',', '.')), // largura da viga
+            parseFloat(classeMaeEntradasDiferida[3].value.replace(',', '.')), // arm compresão
             classeMaeEntradasDiferida[4],                   // parcela de carga=
-            parseFloat(classeMaeEntradasDiferida[5].value), // Tempo Parcela de carga
+            parseFloat(classeMaeEntradasDiferida[5].value.replace(',', '.')), // Tempo Parcela de carga
             document.getElementById('cargaTempo'),          // carga x tempo=
             document.getElementById('somacarga'),           // soma carga=
             document.getElementById("guardaValor")
@@ -192,14 +192,14 @@ btnFlechaDiferida.onclick = function(){
     document.getElementById("seletorGeralInternoDiferida"), "diferida")){
         
         var mainValor = mainFlechaDiferida(
-            parseFloat(classeMaeEntradasDiferida[0].value), // flecha diferida
+            parseFloat(classeMaeEntradasDiferida[0].value.replace(',', '.')), // flecha diferida
             document.getElementById('seletorGeralInternoDiferida'),
             document.getElementById('armSimples'),
             document.getElementById('armDupla'),
-            parseFloat(classeMaeEntradasDiferida[3].value), // armCompressao
-            parseFloat(classeMaeEntradasDiferida[5].value), // tmpoParceCarga
-            parseFloat(classeMaeEntradasDiferida[2].value), // largura da viga
-            parseFloat(classeMaeEntradasDiferida[1].value), // altura util da viga
+            parseFloat(classeMaeEntradasDiferida[3].value.replace(',', '.')), // armCompressao
+            parseFloat(classeMaeEntradasDiferida[5].value.replace(',', '.')), // tmpoParceCarga
+            parseFloat(classeMaeEntradasDiferida[2].value.replace(',', '.')), // largura da viga
+            parseFloat(classeMaeEntradasDiferida[1].value.replace(',', '.')), // altura util da viga
             document.getElementById('cargaTempo'),          // carga x tempo=
             document.getElementById('somacarga'),            // soma carga=
             document.getElementById("guardaValor")

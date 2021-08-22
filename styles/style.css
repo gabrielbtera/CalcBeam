@@ -427,6 +427,12 @@ hr {
     align-items: center;
     flex-direction: column;
     
+}.swal2-title,.swal2-html-container{
+    color: #004ca5;
+}.swal2-html-container{
+    font-weight: bold;
+}.swal2-title{
+    font-size: 25px;
 }
 
 

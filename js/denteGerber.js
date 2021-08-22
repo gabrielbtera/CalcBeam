@@ -24,7 +24,7 @@ function calcularDenteGerber(lista, resistenciaConcreto,
         "lPontodeApoioC", "dBielaDeCompresssao"]
     let valoresMetro = {}
     for(let i = 0; i< lista.length - 5; i ++){
-        valoresMetro[listaNomes[i]] = parseFloat(lista[i].value) * 100
+        valoresMetro[listaNomes[i]] = parseFloat(lista[i].value.replace(',', '.')) * 100
         
     }
     
@@ -68,7 +68,7 @@ function calcularDenteGerber(lista, resistenciaConcreto,
 
     }else{
 
-        warnninggerber(document.getElementsByClassName("divsCalculos")[4], "A largura do aparelho não satisfaz.","Recomenda-se uma resvisão dos valores.")
+        warnninggerber(document.getElementsByClassName("divsCalculos")[4], "A largura do aparelho não satisfaz.","Recomenda-se uma revisão dos valores.")
         
         listaSaida = []
 
@@ -92,11 +92,11 @@ btnDenteGerber.onclick = function(){
 
         var valor = calcularDenteGerber(
             classeMaeEntradasDenteGerber,                      // lista
-            parseFloat(classeMaeEntradasDenteGerber[7].value), // resistenciaConcreto
-            parseFloat(classeMaeEntradasDenteGerber[8].value), // resEcoamentoAco
-            parseFloat(classeMaeEntradasDenteGerber[9].value),  // cargaCalculo
-            parseFloat(classeMaeEntradasDenteGerber[10].value), // cargaHorizontalC
-            parseFloat(classeMaeEntradasDenteGerber[11].value)  // dimensaoE
+            parseFloat(classeMaeEntradasDenteGerber[7].value.replace(',', '.')), // resistenciaConcreto
+            parseFloat(classeMaeEntradasDenteGerber[8].value.replace(',', '.')), // resEcoamentoAco
+            parseFloat(classeMaeEntradasDenteGerber[9].value.replace(',', '.')),  // cargaCalculo
+            parseFloat(classeMaeEntradasDenteGerber[10].value.replace(',', '.')), // cargaHorizontalC
+            parseFloat(classeMaeEntradasDenteGerber[11].value.replace(',', '.'))  // dimensaoE
         )
         resultados(document.getElementsByClassName("divsCalculos")[4], 
                         valor, 
