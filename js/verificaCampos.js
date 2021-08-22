@@ -129,6 +129,21 @@ export function verificaCampos(entradas, checks = false, slider = false, diferid
     }
 
     let flag3 = false
+    if(slider != false){
+        
+        if (slider.options[slider.selectedIndex].value === "semAgregado") {
+            slider.style.backgroundColor = "#ffdddd"
+            flag3 = true
+
+        
+        }else {
+            slider.style.backgroundColor = "#ecf5ff"
+        }
+
+    }
+
+
+
     if (flag){
         
         Swal.fire({
@@ -141,34 +156,20 @@ export function verificaCampos(entradas, checks = false, slider = false, diferid
             
            })
     }
-    
-    else if(slider != false){
-        console.log(slider.options[slider.selectedIndex].value)
-        if (slider.options[slider.selectedIndex].value === "semAgregado") {
+
+
+   else if(flag3){
+        Swal.fire({
+            title: 'Campo vazio',
+            text: "INSIRA UM TEMPO EM MÊS.",
+            showCancelButton: false,
+            confirmButtonColor: '#0055b8',
+            background: "#b7d8ff",
+            confirmButtonText: 'Entendi',
             
-            Swal.fire({
-                title: 'Campo vazio',
-                text: "INSIRA UM TEMPO EM MÊS.",
-                showCancelButton: false,
-                confirmButtonColor: '#0055b8',
-                background: "#b7d8ff",
-                confirmButtonText: 'Entendi',
-                
-               })
+        })
 
-            slider.style.backgroundColor = "#ffdddd"
-            flag3 = true
-
-        
-        }else {
-            slider.style.backgroundColor = "#ecf5ff"
-        }
-
-    }
-
-
-    
-   
+   }
 
     else if(flag2){
         
