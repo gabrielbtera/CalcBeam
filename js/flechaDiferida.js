@@ -44,7 +44,7 @@ function calculoDaFlechaDiferida(
     
     // VERIFICA SE O TEMPO FOI ADICIONADO
     if (isNaN(tempoParcelaCarga)){
-        document.getElementById("avisoValores").innerHTML = "Adicione o TEMPO de aplicacao da parcela de carga."
+        document.getElementById("avisoValores").innerHTML = "Adicione o TEMPO de aplicação da parcela de carga."
         document.getElementsByClassName('warnning')[0].style.display = "flex"
         document.getElementById("avisoValores").style.color = '#ff0000'
         classeMaeEntradasDiferida[5].style.backgroundColor = "#ffdddd"
@@ -233,5 +233,15 @@ btnLimparCampos.onclick = function(){
     )
     
    limpaSeletor(document.getElementById('seletorGeralInternoDiferida'))
+   const indice = 2
+    if (document.getElementsByClassName("divsCalculos")[indice].children.length > 1){
+        document.getElementsByClassName("divsCalculos")[indice].removeChild(document.getElementsByClassName("divsCalculos")[indice].children[1])
+        document.getElementsByClassName("divsCalculos")[indice].removeChild(document.getElementsByClassName("divsCalculos")[indice].children[1])
+    }if (document.getElementsByClassName('divsCalculos').length > 5){
+        
+        document.getElementsByClassName('container')[0].removeChild(document.getElementsByClassName('divsCalculos')[5])
+
+
+    }
 }
 

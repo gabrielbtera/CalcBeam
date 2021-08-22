@@ -161,6 +161,15 @@ btnCalcTransversal.onclick = function (){
 
 document.getElementById("btnLimpaArmTrnasversal").onclick = function(){
     limparCampos(classeMaeEntradasTransversal)
+    const indice = 3
+    if (document.getElementsByClassName("divsCalculos")[indice].children.length > 1){
+        document.getElementsByClassName("divsCalculos")[indice].removeChild(document.getElementsByClassName("divsCalculos")[indice].children[1])
+        document.getElementsByClassName("divsCalculos")[indice].removeChild(document.getElementsByClassName("divsCalculos")[indice].children[1])
+    }if (document.getElementsByClassName('divsCalculos').length === 6){
+        document.getElementsByClassName('container')[0].removeChild(document.getElementsByClassName('divsCalculos')[5])
+
+
+    }
     
 
 }
