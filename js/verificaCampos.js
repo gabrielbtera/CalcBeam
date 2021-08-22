@@ -79,7 +79,7 @@ export function verificaCampos(entradas, checks = false, slider = false, diferid
             verifica = true
             aux = entradas.length
         }
-        console.log(entradas[6])
+        
 
         for (let i = 0; i < aux; i++){
             if (verifica && i === 6){
@@ -103,7 +103,7 @@ export function verificaCampos(entradas, checks = false, slider = false, diferid
     else{
        
         for (let i = 0; i < entradas.length; i++){
-            console.log(window.getComputedStyle(entradas[i]).display)
+            
             if (entradas[i].value === "" &&  window.getComputedStyle(entradas[i]).display === "block"){  
                 entradas[i].style.backgroundColor = "#ffdddd"
                 flag = true
@@ -132,8 +132,18 @@ export function verificaCampos(entradas, checks = false, slider = false, diferid
     if(slider != false){
         
         if (slider.options[slider.selectedIndex].value === "semAgregado") {
-            alert("INSIRA UM TEMPO EM MÊS.")
-            slider.style.backgroundColor = "#ffffdd"
+            
+            Swal.fire({
+                title: 'Campo vazio',
+                text: "INSIRA UM TEMPO EM MÊS.",
+                showCancelButton: false,
+                confirmButtonColor: '#0055b8',
+                background: "#b7d8ff",
+                confirmButtonText: 'Entendi',
+                
+               })
+
+            slider.style.backgroundColor = "#ffdddd"
             flag3 = true
 
         
@@ -143,12 +153,31 @@ export function verificaCampos(entradas, checks = false, slider = false, diferid
 
     }
 
+
+    if (flag){
+        
+        Swal.fire({
+            title: 'Campo vazio',
+            text: "Preecha todos os campos avermelhados.",
+            showCancelButton: false,
+            confirmButtonColor: '#0055b8',
+            background: "#b7d8ff",
+            confirmButtonText: 'Entendi',
+            
+           })
+    }
    
 
-    if(flag2){
-        alert("Selecione ao menos uma das caixinhas.")
-    }if (flag){
-        alert("Preecha todos os campos avermelhados.")
+    else if(flag2){
+        
+        Swal.fire({
+            title: 'Campo vazio',
+            text: "Selecione ao menos uma das caixinhas.",
+            showCancelButton: false,
+            confirmButtonColor: '#0055b8',
+            background: "#b7d8ff",
+            confirmButtonText: 'Entendi'
+           })
     }
 
     
