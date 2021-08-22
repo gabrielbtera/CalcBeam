@@ -147,6 +147,7 @@ export function verificaCampos(entradas, checks = false, slider = false, diferid
     if (flag){
         
         Swal.fire({
+            icon: 'error',
             title: 'Campo vazio',
             text: "Preecha todos os campos avermelhados.",
             showCancelButton: false,
@@ -160,6 +161,7 @@ export function verificaCampos(entradas, checks = false, slider = false, diferid
 
    else if(flag3){
         Swal.fire({
+            icon: 'error',
             title: 'Campo vazio',
             text: "INSIRA UM TEMPO EM MÊS.",
             showCancelButton: false,
@@ -174,6 +176,7 @@ export function verificaCampos(entradas, checks = false, slider = false, diferid
     else if(flag2){
         
         Swal.fire({
+            icon: 'error',
             title: 'Campo vazio',
             text: "Selecione ao menos uma das caixinhas.",
             showCancelButton: false,
