@@ -129,8 +129,21 @@ export function verificaCampos(entradas, checks = false, slider = false, diferid
     }
 
     let flag3 = false
-    if(slider != false){
+    if (flag){
         
+        Swal.fire({
+            title: 'Campo vazio',
+            text: "Preecha todos os campos avermelhados.",
+            showCancelButton: false,
+            confirmButtonColor: '#0055b8',
+            background: "#b7d8ff",
+            confirmButtonText: 'Entendi',
+            
+           })
+    }
+    
+    else if(slider != false){
+        console.log(slider.options[slider.selectedIndex].value)
         if (slider.options[slider.selectedIndex].value === "semAgregado") {
             
             Swal.fire({
@@ -154,18 +167,7 @@ export function verificaCampos(entradas, checks = false, slider = false, diferid
     }
 
 
-    if (flag){
-        
-        Swal.fire({
-            title: 'Campo vazio',
-            text: "Preecha todos os campos avermelhados.",
-            showCancelButton: false,
-            confirmButtonColor: '#0055b8',
-            background: "#b7d8ff",
-            confirmButtonText: 'Entendi',
-            
-           })
-    }
+    
    
 
     else if(flag2){
