@@ -64,12 +64,14 @@ function limparChecksNavBar(indice){
 
 function mostrarCampo (check, tela, indice){
     if(check.checked){
+        document.getElementById("icone").style.display = "none"
         limparChecksNavBar(indice)
         tela.style.display = 'flex';
         divMArcacao[indice].style.backgroundColor = "#004594"
         divMArcacao[indice].style.fontWeight = "bold"
 
     }else {
+        document.getElementById("icone").style.display = "flex"
         tela.style.display = "none";
         check.checked = false
         divMArcacao[indice].style.backgroundColor = "#0055b8"

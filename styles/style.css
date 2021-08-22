@@ -433,6 +433,32 @@ hr {
     font-weight: bold;
 }.swal2-title{
     font-size: 25px;
+}.icone{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 15rem;
+    height: 180px;
+    width: 100%;
+}.titulo{
+    font-weight: bold;
+    font-size: 50px;
+    margin:0 ;
+    color: #18447a;
+}.autores{
+    margin-bottom: 15px;
+    color: #18447a;
+}.portaAutores{
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    
+    font-size: 15px;
+}.por{
+    margin: 7px;
 }
 
 
@@ -481,6 +507,10 @@ hr {
     .containerImgRespVarias:active{
     transform: none;
     box-shadow: none;
+    }.icone{
+        
+        height: 100px;
+        width: 100%;
     }
     
     
