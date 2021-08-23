@@ -103,16 +103,16 @@ btnArmLong.onclick = function (){
     }
    
     
-    if (! verificaCampos(classeMaeEntradas, document.getElementById('calculoDaArmlong').children[0].children[1].getElementsByClassName('checksCondicional'), false)){
+    if (! verificaCampos(classeMaeEntradas, document.getElementById('calculoDaArmlong').children[0].children[1].getElementsByClassName('checksCondicional'), false, "longitudinal")){
         let valor = calculoDaArmlongitudinal(
-            classeMaeEntradas[0].value,
-            classeMaeEntradas[1].value,
-            classeMaeEntradas[2].value,
-            classeMaeEntradas[3].value,
-            classeMaeEntradas[4].value,
-            classeMaeEntradas[5].value,
+            parseFloat(classeMaeEntradas[0].value.replace(',', '.')),
+            parseFloat(classeMaeEntradas[1].value.replace(',', '.')),
+            parseFloat(classeMaeEntradas[2].value.replace(',', '.')),
+            parseFloat(classeMaeEntradas[3].value.replace(',', '.')),
+            parseFloat(classeMaeEntradas[4].value.replace(',', '.')),
+            parseFloat(classeMaeEntradas[5].value.replace(',', '.')),
             document.getElementById('dlinha'),
-            classeMaeEntradas[6].value,
+            parseFloat(classeMaeEntradas[6].value.replace(',', '.')),
             document.getElementsByClassName("Aviso")[0]
         )
     }

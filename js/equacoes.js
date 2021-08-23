@@ -1,6 +1,6 @@
 
 
-export function listarExtra(elemento, diretorio, numero, id = 'extraCalc""'){
+export function listarExtra(elemento, diretorio, numero, id = 'extraCalc""', flag = false){
     
     // Essa funcao arruma as imagens das equacoes e é usada no arquivo respostas.js
 
@@ -14,6 +14,15 @@ export function listarExtra(elemento, diretorio, numero, id = 'extraCalc""'){
 
     var imgtotal = document.createElement("div")
     imgtotal.setAttribute('class', 'ListaImagensOpc')
+
+    let dic = {
+        1: "Seção longitudinal (armadura dupla).", 
+        2: "Seção longitudinal (armadura simples).", 
+        3: "Seção transaversal."
+    }
+
+    let p = 0
+    let divimgleg = 0
     for (let i = 1; i <= numero; i++){
         
         let divListaImg = document.createElement("div")
@@ -21,8 +30,20 @@ export function listarExtra(elemento, diretorio, numero, id = 'extraCalc""'){
         let imagem = document.createElement('img')
         imagem.setAttribute("class", "imgResult");
         imagem.setAttribute("src", diretorio + "/" + i + ".jpg");
+        
+        
         divListaImg.appendChild(imagem)
+        // if(flag){
+        //     divimgleg = document.createElement('div')
+        //     divimgleg.setAttribute('class', "divimgleg")
+        //     p = document.createElement('p')
+        //     p.setAttribute('class', 'legendaArmaduras')
+        //     p.innerHTML = dic[i]
+        //     divListaImg.appendChild(p)
+            
+        // }
         imgtotal.appendChild(divListaImg)
+        
             
     }
 

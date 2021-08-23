@@ -12,10 +12,11 @@ export function verificaCampos(entradas, checks = false, slider = false, diferid
         let aux = 0
 
         if(window.getComputedStyle(document.getElementById("tresInputs")).display != "flex"){
-            aux =(entradas.length-2) - 3
+            aux = (entradas.length-2) - 3
         }else{
-            aux =(entradas.length-2)
+            aux = (entradas.length-2)
         }
+        
     
         
         for (let i = 0; i < aux; i++){
@@ -27,20 +28,21 @@ export function verificaCampos(entradas, checks = false, slider = false, diferid
             }else if (isNaN(parseFloat(entradas[i].value))){
                 entradas[i].style.backgroundColor = "#fffddd"
                 flagLetra = true
-
+                console.log(entradas[i], 'else if')
             }
             else{
                 entradas[i].style.backgroundColor = "#ecf5ff"
-                
+                flag = false
+                console.log(entradas[i], 'else', flag)
             }
     
         }
 
         
 
-        if (document.getElementById("cargaTempo").value === "" && document.getElementById("somacarga").value === ""){
-            flag = true
-        }
+        // if (document.getElementById("cargaTempo").value === "" && document.getElementById("somacarga").value === ""){
+        //     flag = true
+        // }
 
     }else if (diferidaFlag === 'gerber'){
         for (let i = 0; i < entradas.length - 2; i++){
@@ -91,9 +93,11 @@ export function verificaCampos(entradas, checks = false, slider = false, diferid
         let verifica = false
         if (window.getComputedStyle(document.getElementById("condicaocalc1")).display == "flex"){
             aux = entradas.length - 2
-        }if (window.getComputedStyle(document.getElementById("condicaocalc2")).display == "flex"){
+        }else if (window.getComputedStyle(document.getElementById("condicaocalc2")).display == "flex"){
             verifica = true
             aux = entradas.length
+        }else{
+            aux = entradas.length - 3
         }
         
 
@@ -123,31 +127,54 @@ export function verificaCampos(entradas, checks = false, slider = false, diferid
 
 
     
-    else{
-       
-        for (let i = 0; i < entradas.length; i++){
+    else if("longitudinal" === diferidaFlag){
+        let aux =  0
+        let verifica = false
+        if (window.getComputedStyle(document.getElementById("momentoDeCalcInput")).display == "flex"){
+            aux = entradas.length-2
             
-            if (entradas[i].value === "" &&  window.getComputedStyle(entradas[i]).display === "block"){  
+        }else if (window.getComputedStyle(document.getElementById("momAtuante")).display == "flex"){
+            verifica = true
+            aux = entradas.length-1
+        }else{
+            aux = entradas.length - 3
+
+        }
+        console.log(aux)
+        
+
+        for (let i = 0; i < aux; i++){
+            if (verifica && i === 4){
+                continue
+            }
+            if (entradas[i].value === "" ){
                 entradas[i].style.backgroundColor = "#ffdddd"
+                
                 flag = true
             }else if (isNaN(parseFloat(entradas[i].value))){
                 entradas[i].style.backgroundColor = "#fffddd"
+                
                 flagLetra = true
 
             }
+            
             else{
                 entradas[i].style.backgroundColor = "#ecf5ff"
+                
             }
-    
         }
+        
+        
     
     }
     
     let flag2 = false
     
     if (typeof checks != Boolean){
+        
         for (let i = 0; i < checks.length; i++){
             if(!checks[i].checked){
+                console.log("eita")
                 flag2 = true
             }else{
                 flag2 = false
@@ -173,7 +200,7 @@ export function verificaCampos(entradas, checks = false, slider = false, diferid
 
 
     if (flag){
-        
+        console.log('entrou na flag')
         Swal.fire({
             icon: 'error',
             title: 'Campo vazio',

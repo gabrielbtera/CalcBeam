@@ -63,7 +63,7 @@ export function resultados(elemento, respostas, flag = false, dir = "", numero=0
     botaoFigs.innerHTML = 'Armaduras'
 
     botaoFigs.onclick = function(){
-        listarExtra(flag, DirArm, 3, id)
+        listarExtra(flag, DirArm, 3, id, true)
         setTimeout(function () {if (window.innerWidth >= 596){window.scrollTo(0, 500)}else{window.scrollTo(0, 1000)}}, 100)
     }
 

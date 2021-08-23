@@ -79,7 +79,6 @@ function calculoDaFlechaDiferida(
             
             auxiliar = pc + parseFloat(somacarga.value)
             somacarga.value = auxiliar
-
             somacarga.innerHTML = auxiliar.toFixed(3)
         }
         document.getElementById("avisoValores").style.color = '#108b24'
@@ -187,6 +186,37 @@ btnInsereDiferida.onclick = function(){
     
 }
 
+
+
+
+// Limpar campos Diferida
+
+var btnLimparCampos = document.getElementsByClassName('botaoLimpar')[2]
+
+btnLimparCampos.onclick = function(){
+    limparCampos(classeMaeEntradasDiferida, [
+        document.getElementById('cargaTempo'),
+        document.getElementById('somacarga'),          
+        document.getElementById("guardaValor"),
+        document.getElementById("guardaValor2")
+    ], 
+    [document.getElementById('cargaTempo'), 
+     document.getElementById('somacarga')]
+    )
+    
+   limpaSeletor(document.getElementById('seletorGeralInternoDiferida'))
+   const indice = 2
+    if (document.getElementsByClassName("divsCalculos")[indice].children.length > 1){
+        document.getElementsByClassName("divsCalculos")[indice].removeChild(document.getElementsByClassName("divsCalculos")[indice].children[1])
+        document.getElementsByClassName("divsCalculos")[indice].removeChild(document.getElementsByClassName("divsCalculos")[indice].children[1])
+    }if (document.getElementsByClassName('divsCalculos').length > 5){
+        
+        document.getElementsByClassName('container')[0].removeChild(document.getElementsByClassName('divsCalculos')[5])
+
+
+    }
+}
+
 btnFlechaDiferida.onclick = function(){
     if (! verificaCampos(classeMaeEntradasDiferida, document.getElementById('calculoDaFlechaDiferida').children[0].children[1].getElementsByClassName('checksCondicional'), 
     document.getElementById("seletorGeralInternoDiferida"), "diferida")){
@@ -215,33 +245,5 @@ btnFlechaDiferida.onclick = function(){
     )
     }
 
-}
-
-// Limpar campos Diferida
-
-var btnLimparCampos = document.getElementsByClassName('botaoLimpar')[2]
-
-btnLimparCampos.onclick = function(){
-    limparCampos(classeMaeEntradasDiferida, [
-        document.getElementById('cargaTempo'),
-        document.getElementById('somacarga'),          
-        document.getElementById("guardaValor"),
-        document.getElementById("guardaValor2")
-    ], 
-    [document.getElementById('cargaTempo'), 
-     document.getElementById('somacarga')]
-    )
-    
-   limpaSeletor(document.getElementById('seletorGeralInternoDiferida'))
-   const indice = 2
-    if (document.getElementsByClassName("divsCalculos")[indice].children.length > 1){
-        document.getElementsByClassName("divsCalculos")[indice].removeChild(document.getElementsByClassName("divsCalculos")[indice].children[1])
-        document.getElementsByClassName("divsCalculos")[indice].removeChild(document.getElementsByClassName("divsCalculos")[indice].children[1])
-    }if (document.getElementsByClassName('divsCalculos').length > 5){
-        
-        document.getElementsByClassName('container')[0].removeChild(document.getElementsByClassName('divsCalculos')[5])
-
-
-    }
 }
 
