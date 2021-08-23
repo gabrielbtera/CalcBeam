@@ -526,7 +526,9 @@ hr, .linhaIniciar{
         height: 100px;
         width: 100%;
     }
-    
+    .icone{
+        margin-top: 13rem;
+    }
     
     
 }
