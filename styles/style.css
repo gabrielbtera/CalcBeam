@@ -453,12 +453,12 @@ hr, .linhaIniciar{
     margin-bottom: 15px;
     color: #18447a;
 }.portaAutores{
-    margin-top: 8rem;
+    margin-top: 7rem;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    
+    margin-top: 8rem;
     font-size: 15px;
 }.por{
     margin: 7px;
@@ -471,8 +471,8 @@ hr, .linhaIniciar{
   @media screen and (max-width: 730px) {
     .containerImgRespVarias {
         height: 300px;
-        margin: 5px;
-        margin-top: 0px;
+        margin: 15px;
+        margin-top: 10px;
         margin-bottom: 0px;
         
     }.legendaArmaduras{
@@ -489,6 +489,8 @@ hr, .linhaIniciar{
     .alinamentoInputs {
         padding: 2%;
         
+    }.portaAutores{
+        margin-top: 5rem;
     }
     .labelMenu {
         font-size: 0.7rem;
@@ -511,7 +513,7 @@ hr, .linhaIniciar{
         display: flex;
         align-items: center;
         justify-content: center;
-        height: 400px;
+        height: 300px;
         width: 100%;
         margin: 5px;
         
@@ -579,4 +581,17 @@ hr, .linhaIniciar{
         flex-direction: column;
         margin: 5px;
     }
+}
+@media screen and (max-width: 321px) {
+
+    .containerImgRespVarias {
+        margin: 0px;
+        height: 300px;
+        width: 100%;
+    }.ListaImagensOpc{
+        
+        margin: 3px;
+        width: 310px;
+    }
+
 }
