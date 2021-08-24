@@ -1,7 +1,8 @@
 <div style=" display: flex;
     justify-content: center;
     align-items: center;">
-><img align="center" size = '90px'style="height: 90px;" class= "imgResult" src="imagens/fundo.png" alt=""> </div>
+<img align="center" size = '90px' height='90' class= "imgResult" src="imagens/fundo.png" alt=""> 
+</div>
 
 <h1 style=" font-weight: bold;"
     Tela inicial: align="center" >
