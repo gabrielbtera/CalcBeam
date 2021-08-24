@@ -13,7 +13,7 @@ objetivo de fazer cálculos de dimensionamento de uma viga com dente Gerber. A u
 <h4 align="center">Pensado e projetado por <a href=""><b>Bruno Figueiredo</b></a>
 
  Desenvolvido por:<h4>
- <div style=" display: flex;
+ <div align="center"  style=" display: flex;
     justify-content: center;
     align-items: center;">
     <tr align="center" >
