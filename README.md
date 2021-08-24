@@ -70,7 +70,7 @@ A ideia inicial era criar uma aplicação em python que fosse executável em um 
 ### **1 - Armadura longitudinal:**
 * Desktop:
 
-  * <img align="center" size = '90px' height='' src="./imagens/readme/2.PNG" alt="">
+  * <img align="center"  height='' src="./imagens/readme/2.PNG" alt="">
 
 <br>
 
@@ -105,7 +105,9 @@ A ideia inicial era criar uma aplicação em python que fosse executável em um 
   <br>
 * Mostrar quais componentes preencher:
   <img align="center"  height='' src="./imagens/readme/4.1.PNG" alt="">
+
 <br>
+
 * ÂNGULOS INVÁLIDOS:
   <br>
   * <img align="center"  height='500' src="./imagens/readme/5.PNG" alt="">
