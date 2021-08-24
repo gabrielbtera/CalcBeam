@@ -141,9 +141,7 @@ export function warnningtrans(elemento , muda){
     divResultado.appendChild(legendaResp4)
     divResultado.appendChild(legendaResp5)
 
-    // if(elemento.children.length === 0){
-    //     console.log("nenhum elemento")
-    // }
+    
     var linha = document.createElement('hr');
     if (elemento.children.length === 1){
         

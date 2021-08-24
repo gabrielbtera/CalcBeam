@@ -40,9 +40,7 @@ export function verificaCampos(entradas, checks = false, slider = false, diferid
 
         
 
-        // if (document.getElementById("cargaTempo").value === "" && document.getElementById("somacarga").value === ""){
-        //     flag = true
-        // }
+        
 
     }else if (diferidaFlag === 'gerber'){
         for (let i = 0; i < entradas.length - 2; i++){

@@ -33,15 +33,7 @@ export function listarExtra(elemento, diretorio, numero, id = 'extraCalc""', fla
         
         
         divListaImg.appendChild(imagem)
-        // if(flag){
-        //     divimgleg = document.createElement('div')
-        //     divimgleg.setAttribute('class', "divimgleg")
-        //     p = document.createElement('p')
-        //     p.setAttribute('class', 'legendaArmaduras')
-        //     p.innerHTML = dic[i]
-        //     divListaImg.appendChild(p)
-            
-        // }
+        
         imgtotal.appendChild(divListaImg)
         
             

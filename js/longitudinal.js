@@ -142,13 +142,3 @@ document.getElementById("btnLimpaArmLong").onclick = function(){
 }
 
 
-// console.log(document.getElementsByClassName('botaoEq')[0])
-// //if (document.getElementsByClassName('botaoEq')[0] != null){
-//     document.getElementsByClassName('botaoEq')[0].onclick = function (){
-//         console.log("eita")
-//         listarExtra(,"imagens/equacoes/armlong", 5, 'extraCalcArmLong')
-
-
-//     }
-    
-// //}

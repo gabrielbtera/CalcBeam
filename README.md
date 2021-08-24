@@ -54,7 +54,7 @@ A ideia inicial era criar uma aplicação em python que fosse executável em um 
 ### **Tela inicial:**
 * Desktop:
 
-  * <img align="center" size = '90px' height='' src="./imagens/readme/1.PNG" alt="">
+  * <img align="center"  height='' src="./imagens/readme/1.PNG" alt="">
 
 <br>
 

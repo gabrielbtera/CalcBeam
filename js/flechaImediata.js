@@ -15,12 +15,7 @@ function calculoFlechaImediata(alturaViga, alturaUtilViga,
     dArmDupla, larguraViga, resistenciaConcreto, deformaAco,
     armDeTração, cargaInsidaViga, comprimentoViga,armCompresao ,seletor, simples, dupla ){
     
-    // let lista = [alturaViga, alturaUtilViga,
-    //     dArmDupla, larguraViga, resistenciaConcreto, deformaAco,
-    //     armDeTração, cargaInsidaViga, comprimentoViga,armCompresao ,seletor, simples, dupla]
-    // for (let i = 0; i< lista.length ; i ++){
-    //     console.log(lista[i])
-    // }
+    
     
     if(seletor.options[seletor.selectedIndex].text === "Sem agregado" ){
          Ecs  = 0.85 * 5600 * Math.pow(resistenciaConcreto, 1/2)
