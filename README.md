@@ -7,7 +7,7 @@
     Tela inicial: align="center" >
     <a  href="https://calcbeam.github.io/">CalcBeam</a>
 </h1>
-<h3 align="center" >O <a href="https://calcbeam.github.io">CalcBeam</a> é fruto de um TCC de um graduando em engenharia civil, é uma aplicação client side que tem o 
+<h3 align="center" >O <a href="https://calcbeam.github.io">CalcBeam</a> é fruto de um TCC de um graduando em engenharia civil, uma aplicação client side que tem o 
 objetivo de fazer cálculos de dimensionamento de uma viga com dente Gerber. A utilização e desenvolvimento da ferramenta está centralizada na facilitação do ensino de discentes de Engenharia Civil. </h3>
 <br>
 <h4 align="center">Pensado e projetado por <a href=""><b>Bruno Figueiredo</b></a>
