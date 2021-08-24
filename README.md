@@ -1,6 +1,4 @@
-<div style=" display: flex;
-    justify-content: center;
-    align-items: center;">
+<div align="center" >
 <img align="center" size = '90px' height='90' class= "imgResult" src="imagens/fundo.png" alt=""> 
 </div>
 
