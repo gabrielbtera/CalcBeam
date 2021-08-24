@@ -1,7 +1,7 @@
 <div style=" display: flex;
     justify-content: center;
     align-items: center;">
-<img align="center" size = '90px'style="height: 90px;" class= "imgResult" src="imagens/fundo.png" alt=""></div>
+><img align="center" size = '90px'style="height: 90px;" class= "imgResult" src="imagens/fundo.png" alt=""> </div>
 
 <h1 style=" font-weight: bold;"
     Tela inicial: align="center" >
@@ -17,7 +17,8 @@ objetivo de fazer cálculos de dimensionamento de uma viga com dente Gerber. A u
     justify-content: center;
     align-items: center;">
     <tr align="center" >
-    <td align="center"><a align="center"href="https://gabrielbtera.github.io/"><img style="border-radius: 50%;" src="https://avatars.githubusercontent.com/u/53129406?s=400&u=00c6e17eed47fbd6d217fadc45c3243d9e8c09ec&v=4" width="100px;" alt=""/>
+    <td align="center"><a align="center"href="https://gabrielbtera.github.io/">
+    <img style="border-radius: 50%;" src="https://avatars.githubusercontent.com/u/53129406?s=400&u=00c6e17eed47fbd6d217fadc45c3243d9e8c09ec&v=4" width="100px;" alt=""/>
     <br>
 <b>Gabriel Silva</b></</a>
 </tr>
