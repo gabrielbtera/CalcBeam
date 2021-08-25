@@ -6,7 +6,7 @@
     Tela inicial: align="center" >
     <a  href="https://calcbeam.github.io/">CalcBeam</a>
 </h1>
-<h3 align="center" >O <a href="https://calcbeam.github.io">CalcBeam</a> é fruto de um TCC de um graduando em engenharia civil, uma aplicação client side que tem o 
+<h3 align="center" >O <a href="https://calcbeam.github.io">CalcBeam</a> é fruto de um TCC de um <a align="center" href="https://github.com/calcbeam"> graduando  </a> em engenharia civil, uma aplicação client side que tem o 
 objetivo de fazer cálculos de dimensionamento de uma viga com dente Gerber. A utilização e desenvolvimento da ferramenta está centralizado na facilitação do ensino para discentes de Engenharia Civil. </h3>
 <br>
 <table align="center">
@@ -22,7 +22,7 @@ objetivo de fazer cálculos de dimensionamento de uma viga com dente Gerber. A u
 
 </tr>
 <tr align="center">
-<td ><a align="center" href="https://gabrielbtera.github.io"><b> Bruno Figueiredo </b> </a></td>
+<td ><a align="center" href="https://github.com/calcbeam"><b> Bruno Figueiredo </b> </a></td>
     <td><a align="center" href="https://gabrielbtera.github.io"><b> Gabriel Silva </b> </a></td>
     
 </tr>
@@ -46,7 +46,7 @@ objetivo de fazer cálculos de dimensionamento de uma viga com dente Gerber. A u
 
 <h4>
 A ideia inicial era criar uma aplicação em python que fosse executável em um SO desktop windows e assim,
-<a align="center" href="https://gabrielbtera.github.io"><b> Bruno Figueiredo </b> </a> começou a fazer. Só que após Bruno me  procurar, <a align="center" href="https://gabrielbtera.github.io"><b> eu </b> </a> sugeri que fossem implemantadas páginas web responsivas, assim sendo utilizadas em qualquer aparelho que tenha um navegador. Foi percebido que a aplicação poderia ser rodada 100% no cliente, sem necessidade de um back-end e um banco de dados. O código python que estava rodando com um menu improvisado no terminal foi traduzido para a linguangem JavaScript e conectado às páginas Html.
+<a align="center" href="https://github.com/calcbeam"><b> Bruno Figueiredo </b> </a> começou a fazer. Só que após ele me  procurar, <a align="center" href="https://gabrielbtera.github.io"><b> eu </b> </a> sugeri que fossem implemantadas páginas web responsivas, assim sendo utilizadas em qualquer aparelho que tenha um navegador. Foi percebido que a aplicação poderia ser rodada 100% no cliente, sem necessidade de um back-end e um banco de dados. O código python que estava rodando com um menu improvisado no terminal foi traduzido para a linguangem JavaScript e conectado às páginas Html.
 </h4>
 <br>
 <hr>
